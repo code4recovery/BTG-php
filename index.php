@@ -7,7 +7,7 @@
 
 <body>
 <center>
-<form action="loginpost.php" method="post" name="login" target="_self">
+<form action="loginpost.php" method="get" name="login" target="_self">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>
@@ -21,7 +21,9 @@
   </tr>
   <tr>
     <td>
-    	<input name="b1" type="submit" />    </td>
+    	<input name="b1" type="submit" />
+        <input name="sorter" type="hidden" value="city, zip" />
+    </td>
   </tr>
 </table>
 </form>

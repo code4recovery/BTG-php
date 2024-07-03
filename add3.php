@@ -5,36 +5,58 @@
 <title>Untitled Document</title>
 </head>
 <body>
-<!--- get username and password from database and compare to passed along --->
+
+
 <?php
-	$servername = "mysql24.ezhostingserver.com";
-	$username = "cheri";
-	$password = "M@keC0ntact";
-	$dbname = "btgwwtest";
+$servername = "mysql24.ezhostingserver.com";
+$username = "cheri";
+$password = "M@keC0ntact";
+$dbname = "btgwwtest";
+$added = date('Y/m/d');
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
+$first = $_GET['first'];
+$last = $_GET['last'];
+$interest = $_GET['interest'];
+$address = $_GET['address'];
+$city = $_GET['city'];
+$state = $_GET['state'];
+$zip = $_GET['zip'];
+$district = $_GET['district'];
+$county = $_GET['county'];
+$metro = $_GET['metro'];
+$phone = $_GET['phone'];
+$email = $_GET['email'];
+$age = $_GET['age'];
+$gender = $_GET['gender'];
+if(isset($_GET['flang'])) {
+$flang = 1; }
+else
+$flang = 0;;
 
-	$getpass = $_GET["passwords"];
-		
-	$sql = "SELECT * FROM btgwwlogin WHERE passwords = '$getpass'";
-	$result = $conn->query($sql);
-  		// output data of each row
-  		while($row = $result->fetch_assoc()) 
-  		{
-			$adminlevel = $row["userlevel"];
-			$usernames = $row["usernames"];
-			$passwords = $row["passwords"];
-  		}
-	
-	if ($result->num_rows > 0) {
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+$sql = "INSERT INTO contacts
+(state, district, first, last, interest, address, city, zip, county, phone, email, added, goodtogo, age, gender, flang) 
+VALUES ('$state', '$district', '$first', '$last', '$interest', '$address', '$city', $zip, '$county', '$phone', '$email', '$added', 1, $age, '$gender', '$flang')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+?> 
+
+<?php 
+$adminlevel = $_GET['adminlevel'];
 ?>
 
-<center>
 
 	<?php
 		if ($adminlevel > 1) { 
@@ -117,7 +139,7 @@
   
 <center>    
 <font color="darkblue" size="4">Add a Contact</font><br><br /><br />
-<form action="add2.php" method="get" name="add1">
+<form action="add3.php" method="get" name="add1">
 <table width="381" style="width:100px;">
 	<tr>
     	<td width="111" align="right">
@@ -298,14 +320,10 @@
  <!------- end page here ------------>                   
                     
 <?php 
-	}else	{
-
-  echo "Have a bad day!";
- }
-
+	
 $conn->close();
 	
 ?> 
-
+    
 </body>
-</html> 
+</html>

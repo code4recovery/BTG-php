@@ -14,26 +14,12 @@ $password = "M@keC0ntact";
 $dbname = "btgwwtest";
 $added = date('Y/m/d');
 
-$first = $_GET['first'];
-$last = $_GET['last'];
-$interest = $_GET['interest'];
-$address = $_GET['address'];
-$city = $_GET['city'];
-$state = $_GET['state'];
-$zip = $_GET['zip'];
+$myuser = $_GET['myuser'];
+$mypassword = $_GET['mypassword'];
 $district = $_GET['district'];
-$county = $_GET['county'];
-$metro = $_GET['metro'];
-$phone = $_GET['phone'];
-$email = $_GET['email'];
-$age = $_GET['age'];
-$gender = $_GET['gender'];
-if(isset($_GET['flang'])) {
-$flang = 1; }
-else
-$flang = 0;;
+$userlevel = $_GET['userlevel'];
 
-
+echo "Big BadaBOOM " . $myuser . " " . $mypassword; 
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -41,9 +27,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql = "INSERT INTO contacts
-(state, district, first, last, interest, address, city, zip, county, phone, email, added, goodtogo, age, gender, flang) 
-VALUES ('$state', '$district', '$first', '$last', '$interest', '$address', '$city', $zip, '$county', '$phone', '$email', '$added', 1, $age, '$gender', '$flang')";
+$sql = "INSERT INTO btgwwlogin
+(usernames, passwords, userlevel, district) 
+VALUES ('$myuser', '$mypassword', $userlevel, '$district')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -52,6 +38,10 @@ if ($conn->query($sql) === TRUE) {
 }
 $conn->close();
 ?> 
+
+
+<?php include 'admin3.php';?>
+
 
 <?php 
 global $pass;

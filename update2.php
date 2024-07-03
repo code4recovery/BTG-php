@@ -7,6 +7,7 @@
 <body>
 <!--- get username and password from database and compare to passed along --->
 <?php
+
 	$servername = "mysql24.ezhostingserver.com";
 	$username = "cheri";
 	$password = "M@keC0ntact";
@@ -20,7 +21,8 @@
 	}
 
 	$getpass = $_GET["passwords"];
-		
+	$contactid = $_GET["contactid"];
+	
 	$sql = "SELECT * FROM btgwwlogin WHERE passwords = '$getpass'";
 	$result = $conn->query($sql);
   		// output data of each row
@@ -32,13 +34,10 @@
   		}
 	
 	if ($result->num_rows > 0) {
-?>
 
-<center>
-
-	<?php
 		if ($adminlevel > 1) { 
 
+	
 	?>
 		<center>
 			<table cellpadding="0" cellspacing="0" border="0" bordercolor="red" align="center">
@@ -110,24 +109,66 @@
 				</tr>
 			</table>
         <center>
-		   
-
-<!------- add page here -------->
-
-  
-<center>    
-<font color="darkblue" size="4">Add a Contact</font><br><br /><br />
-<form action="add2.php" method="get" name="add1">
+        
+        
+<?php
+$sql = "SELECT * FROM contacts WHERE contactid = $contactid";
+	$result = $conn->query($sql);
+	// output data of each row
+	while($row = $result->fetch_assoc())
+ {
+    $first = $row['first'];
+    $last = $row['last'];
+    $gender = $row['gender'];
+    $age = $row['age'];
+    $email = $row['email'];
+    $address = $row['address'];
+    $city = $row['city'];
+    $state = $row['State'];
+    $zip = $row['zip'];
+    $county = $row['county'];
+    $phone = $row['phone'];
+    $interest = $row['interest'];
+    $district = $row['district'];
+    $flang = $row['flang'];
+    $olang = $row['olang'];
+    $goodtogo = $row['goodtogo'];
+}
+echo $goodtogo;
+	}
+	
+	?>	        
+        
+        <center>    
+<font color="darkblue" size="4">Update Contact Info</font><br><br /><br />
+<form action="update3.php" method="get" name="edit1">
 <table width="381" style="width:100px;">
 	<tr>
+    	<td width="111" align="right">
+        	Available:
+        </td>
+        <td align="center" colspan="3">
+        	<?php if ($goodtogo == '1') { ?>
+        	<input type="radio" value="1" name="goodtogo" checked="checked" />Yes
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" value="0" name="goodtogo" />No
+            <?php } else { ?>
+        	<input type="radio" value="1" name="goodtogo" />Yes
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" value="0" name="goodtogo" checked="checked" />No
+            <?php } ?>
+            
+        </td>
+    </tr><tr>
     	<td width="111" align="right">
         	First Name:
         </td>
         <td align="left" colspan="3">
         	<INPUT name="first"
 		 			 message="Please enter the first name"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56
+                     value="<?php echo $first;?>">
         </td>
     </tr>
     <tr>
@@ -138,8 +179,9 @@
         	<INPUT name="last"
 		 			 message="Please enter the last name"
 		 			 required="yes"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56
+                     value="<?php echo $last;?>">
         </td>
     </tr>
     <tr>
@@ -147,21 +189,31 @@
         	Gender:
         </td>
         <td width="100">
-        	<select size="1" 
+        	<?php if ($gender == 'Male') { ?>
+        		<select size="1" 
+            		name="gender" 
+                    style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;">
+						<option selected="selected">Male</option>
+		 				<option>Female</option>
+        		</select>
+            <?php } else { ?>
+            	<select size="1" 
             		name="gender" 
                     style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;">
 		 				<option>Male</option>
-						<option>Female</option>
-        	</select>
+						<option selected="selected">Female</option>
+                </select>
+            <?php } ?>
         </td>
         <td width="104" align="right">
         	Age:
         </td>
-        <td width="50">
+        <td width="50" align="right">
             <INPUT name="age"
 		 			 message="Please enter contact age"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56
+                     value="<?php echo $age;?>">
         </td>
     </tr>
     <tr>
@@ -171,8 +223,9 @@
         <td align="left" colspan="3">
         	<INPUT name="email"
 		 			 message="Please enter the email address"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56
+                     value="<?php echo $email;?>">
         </td>
     </tr>
     <tr>
@@ -182,8 +235,9 @@
         <td colspan="3">
         	<INPUT name="address"
 		 			 message="Please enter the complete street address"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56
+                     value="<?php echo $address;?>">
         </td>
     </tr>
     <tr>
@@ -193,8 +247,9 @@
         <td align="left" colspan="3">
         	<INPUT name="city"
 		 			 message="Please enter the city name"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56
+                     value="<?php echo $city;?>">
         </td>
     </tr>
     <tr>
@@ -205,16 +260,18 @@
 			<INPUT name="state"
 		 			 message="Please enter the state name"
 		 			 style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56
+                     value="<?php echo $state;?>">
         </td>
         <td align="right">
             Postal Code:
         </td>
-        <td>
+        <td align="right">
         	<INPUT name="zip"
 		 			 message="Please enter your the code"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56
+                     value="<?php echo $zip;?>">
 		</td>
     </tr>
     <tr>
@@ -225,8 +282,9 @@
         	<INPUT name="county"
 		 			 message="Please enter the name of the county they live in - this will be used to more closely match release location"
 		 			 required="yes"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56
+                     value="<?php echo $county;?>">
         </td>
     </tr>
     <tr>
@@ -237,8 +295,9 @@
         	<INPUT name="phone"
 		 			 message="Please enter the phone number"
 		 			 required="yes"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;px"
-		 			 size=56>
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;px"
+		 			 size=56
+                     value="<?php echo $phone;?>">
         </td>
     </tr>
     <tr>
@@ -246,23 +305,42 @@
         	Willing to Bridge:
         </td>
         <td align="left">
+        	<?php if ($interest == 'Both') { ?>
+        	<select size="1" 
+            		name="interest" 
+                    style="WIDTH: 100px; HEIGHT: 26px; background-color: white; color: darkblue;">
+		 				<option selected="selected">Both</option>
+						<option>Corrections</option>
+                        <option>Treatment</option>
+        	</select>
+            <?php } elseif ($interest == 'Corrections') { ?>            
+        	<select size="1" 
+            		name="interest" 
+                    style="WIDTH: 100px; HEIGHT: 26px; background-color: white; color: darkblue;">
+		 				<option>Both</option>
+						<option selected="selected">Corrections</option>
+                        <option>Treatment</option>
+        	</select>
+            <?php } else { ?>            
         	<select size="1" 
             		name="interest" 
                     style="WIDTH: 100px; HEIGHT: 26px; background-color: white; color: darkblue;">
 		 				<option>Both</option>
 						<option>Corrections</option>
-                        <option>Treatment</option>
+                        <option selected="selected">Treatment</option>
         	</select>
+            <?php } ?>
         </td>
     	<td align="right" colspan="1" nowrap>
         	District Number:
         </td>
-        <td align="left">
+        <td align="right">
         	<INPUT name="district"
 		 			 message="Please enter the number of the District"
 		 			 required="yes"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=4>
+		 			 size=4
+                     value="<?php echo $district;?>">
         </td>
     </tr>
     <tr>
@@ -272,16 +350,21 @@
         	Spanish Speaking
         </td>
         <td>
+        	<?php if ($flang == 0) { ?>
         	<input type="checkbox" name="flang">
+            <?php } else { ?>
+        	<input type="checkbox"  checked="checked" name="flang">
+            <?php } ?>            
         </td>
         <td align="right">
             Other Language:
         </td>
-        <td>
+        <td align="right">
         	<INPUT name="olang"
 		 			 message="Please enter your the code"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56
+                     value="<?php echo $olang;?>">
 		</td>
     </tr>
     <tr>	
@@ -289,23 +372,15 @@
 			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
 			<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 			<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-			<input type="Submit" value="Add Contact" name="b2">
+			<input type="hidden" name="contactid" value="<?php echo $contactid;?>">
+			<input type="Submit" value="Update Contact Info" name="b2">
 		</td>
 	</tr>
 </table>
 </form>                    
 </center>                    
- <!------- end page here ------------>                   
-                    
-<?php 
-	}else	{
+		
 
-  echo "Have a bad day!";
- }
-
-$conn->close();
-	
-?> 
-
+   
 </body>
-</html> 
+</html>

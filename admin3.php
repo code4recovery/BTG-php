@@ -38,7 +38,6 @@
 
 	<?php
 		if ($adminlevel > 1) { 
-
 	?>
 		<center>
 			<table cellpadding="0" cellspacing="0" border="0" bordercolor="red" align="center">
@@ -49,7 +48,7 @@
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Add an Admin" name="b21" style="width:260px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Add an Coordinator" name="b21" style="width:260px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
@@ -58,7 +57,7 @@
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Update an Admin" name="b22" style="width:260px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Update an Coordinator" name="b22" style="width:260px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
@@ -67,14 +66,13 @@
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Delete an Admin" name="b23" style="width:260px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Delete an Coordinator" name="b23" style="width:260px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 				</tr>
 			</table>
         <center>
-	
-	
+        	
 	<?php }  ?>
     
 		<center>
@@ -110,186 +108,69 @@
 				</tr>
 			</table>
         <center>
-		   
 
 <!------- add page here -------->
 
   
 <center>    
 <font color="darkblue" size="4">Add a Contact</font><br><br /><br />
-<form action="add2.php" method="get" name="add1">
+<form action="admin3a.php" method="get" name="add1">
 <table width="381" style="width:100px;">
 	<tr>
     	<td width="111" align="right">
-        	First Name:
+        	Username:
         </td>
-        <td align="left" colspan="3">
-        	<INPUT name="first"
-		 			 message="Please enter the first name"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
+        <td align="left" colspan="2">
+        	<INPUT name="myuser"
+		 			 message="Please enter a username"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
 		 			 size=56>
         </td>
     </tr>
     <tr>
        	<td align="right" nowrap>
-        	Last Name:
+        	Password:
         </td>
-        <td align="left" colspan="3">
-        	<INPUT name="last"
-		 			 message="Please enter the last name"
+        <td align="left" colspan="2">
+        	<INPUT name="mypassword"
+		 			 message="Please enter a password"
 		 			 required="yes"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
 		 			 size=56>
         </td>
     </tr>
     <tr>
-    	<td align="right" nowrap>
-        	Gender:
+       	<td align="right" nowrap>
+        	District:
         </td>
-        <td width="100">
-        	<select size="1" 
-            		name="gender" 
-                    style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;">
-		 				<option>Male</option>
-						<option>Female</option>
-        	</select>
-        </td>
-        <td width="104" align="right">
-        	Age:
-        </td>
-        <td width="50">
-            <INPUT name="age"
-		 			 message="Please enter contact age"
-		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
-        </td>
-    </tr>
-    <tr>
-    	<td align="right" nowrap>
-        	Email Address:
-        </td>
-        <td align="left" colspan="3">
-        	<INPUT name="email"
-		 			 message="Please enter the email address"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
-        </td>
-    </tr>
-    <tr>
-    	<td align="right" nowrap>
-        	Street Address:
-        </td>
-        <td colspan="3">
-        	<INPUT name="address"
-		 			 message="Please enter the complete street address"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
-        </td>
-    </tr>
-    <tr>
-    	<td align="right" nowrap>
-        	City:
-        </td>
-        <td align="left" colspan="3">
-        	<INPUT name="city"
-		 			 message="Please enter the city name"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
-        </td>
-    </tr>
-    <tr>
-    	<td align="right" nowrap>
-        	State:
-        </td> 
-    	<td align="left">
-			<INPUT name="state"
-		 			 message="Please enter the state name"
-		 			 style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
-        </td>
-        <td align="right">
-            Postal Code:
-        </td>
-        <td>
-        	<INPUT name="zip"
-		 			 message="Please enter your the code"
-		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
-		</td>
-    </tr>
-    <tr>
-    	<td align="right" nowrap>
-        	County:
-        </td>
-        <td align="left" colspan="3">
-        	<INPUT name="county"
-		 			 message="Please enter the name of the county they live in - this will be used to more closely match release location"
-		 			 required="yes"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
-        </td>
-    </tr>
-    <tr>
-    	<td align="right" nowrap>
-        	Phone:
-        </td>
-        <td align="left" colspan="3">
-        	<INPUT name="phone"
-		 			 message="Please enter the phone number"
-		 			 required="yes"
-		 			 style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;px"
-		 			 size=56>
-        </td>
-    </tr>
-    <tr>
-    	<td align="right" nowrap="nowrap">
-        	Willing to Bridge:
-        </td>
-        <td align="left">
-        	<select size="1" 
-            		name="interest" 
-                    style="WIDTH: 100px; HEIGHT: 26px; background-color: white; color: darkblue;">
-		 				<option>Both</option>
-						<option>Corrections</option>
-                        <option>Treatment</option>
-        	</select>
-        </td>
-    	<td align="right" colspan="1" nowrap>
-        	District Number:
-        </td>
-        <td align="left">
+        <td align="left" colspan="1">
         	<INPUT name="district"
-		 			 message="Please enter the number of the District"
+		 			 message="Please enter the district"
 		 			 required="yes"
-		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=4>
-        </td>
-    </tr>
-    <tr>
-    </tr>
-	<tr>
-    	<td align="right" nowrap>
-        	Spanish Speaking
-        </td>
-        <td>
-        	<input type="checkbox" name="flang">
-        </td>
-        <td align="right">
-            Other Language:
-        </td>
-        <td>
-        	<INPUT name="olang"
-		 			 message="Please enter your the code"
-		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 style="WIDTH: 60px; HEIGHT: 22px; background-color: white; color: darkblue;"
 		 			 size=56>
-		</td>
+        </td>
+    	<td align="right" nowrap>
+        	Admin Level:&nbsp;
+        	<select size="1" 
+            		name="userlevel" 
+                    style="WIDTH: 130px; HEIGHT: 22px; background-color: white; color: darkblue;">
+		 				<option value="1">Local Coordinator</option>
+						<option value="2">System Admin</option>
+        	</select>
+        </td>
     </tr>
     <tr>	
-		<td align="center" colspan="3">
+		<td align="center" colspan="4">
+        	For System Administrators Enter the District as 0 (zero)
+        </td>
+    </tr>
+    <tr>	
+		<td align="center" colspan="4">
 			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
 			<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 			<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-			<input type="Submit" value="Add Contact" name="b2">
+			<input type="Submit" value="Add Admin Coordinator" name="b2">
 		</td>
 	</tr>
 </table>
