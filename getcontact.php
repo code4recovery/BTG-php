@@ -82,7 +82,10 @@ AND if(isset($interest1)), (interest = echo $searchinterest1, 5=5)";
 	if ($conn->connect_error) {
   		die("Connection failed: " . $conn->connect_error);
 	}
-$sql = "SELECT * FROM contacts WHERE 0=0 AND district = $searchdistrict1";
+$sql = "SELECT * FROM contacts WHERE 0=0 
+if (isset($_GET['district1'])) {
+  $sql .= ' AND district = "' . $_GET['searchdistrict'] . '"';
+}
 
 $result = $conn->query($sql);	
 // output data of each row
