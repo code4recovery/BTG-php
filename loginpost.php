@@ -1,156 +1,171 @@
-<body>
+<?php include ('header.php'); ?>
+<!---- insert contact table here ------>
 <?php
-	$servername = "mysql24.ezhostingserver.com";
-	$username = "cheri";
-	$password = "M@keC0ntact";
-	$dbname = "btgwwtest";
-
-	// Create connection
+// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
 	if ($conn->connect_error) {
   		die("Connection failed: " . $conn->connect_error);
 	}
-	$getpass = $_GET["pass"];
+	$getpass = $_GET["passwords"];
 	$sorter = $_GET["sorter"];
-	
-	$sql = "SELECT * FROM btgwwlogin WHERE passwords = '$getpass'";
-	$result = $conn->query($sql);
-  		// output data of each row
-  		while($row = $result->fetch_assoc()) 
-  		{
-    		
-			$adminlevel = $row["userlevel"];
-			$usernames = $row["usernames"];
-			$passwords = $row["passwords"];
-			$admindistrict = $row["district"];
-  		}
-	
-	if ($result->num_rows > 0) {
-	
-	
-  
-  	
-	
-?>
-
-
-                    
-	<?php
-		if ($adminlevel > 1) { 
-
-	?>
-		<center>
-			<table cellpadding="0" cellspacing="0" border="0" bordercolor="red" align="center">
-			    <tr>
-			    	<td valign="top">
-						<form method="get" action="admin3.php"name="button21">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Add an Admin" name="b21" style="width:260px; height: 24px; background-color: lightgray;" size=35>
-						</form>
-			        </td>
-			    	<td valign="top">
-						<form method="get" action="admin4.php"name="button22">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Update an Admin" name="b22" style="width:260px; height: 24px; background-color: lightgray;" size=35>
-						</form>
-			        </td>
-			    	<td valign="top">
-						<form method="get" action="admin5.php"name="button23">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Delete an Admin" name="b23" style="width:260px; height: 24px; background-color: lightgray;" size=35>
-						</form>
-			        </td>
-				</tr>
+?>	
+<center>
+<br /><br />
+<font color="red" size="6">
+Check the Box(s) to Search By in the top row<br>
+Then choose the search option from the second row<br />
+<br />
+the more options checked the fewer results will be found
+</font> 
+<form action="getcontact.php" method="GET">          
+<table>
+    <tr>
+        <td rowspan="5" bgcolor="silver" style="width:.25px;">
+        	&nbsp;<br>
+        </td>
+        <td colspan="11" align="center">
+        	<hr color="silver">
+        </td>
+        <td rowspan="5" bgcolor="silver" style="width:.25px;">
+        	&nbsp;<br>
+        </td>
+    </tr>
+	<tr>
+		<td colspan="1">
+			<input type="Checkbox" name="district1" value="1"><font color="red" size="5">District</font>
+		</td>
+        <td rowspan="2" bgcolor="silver" style="width:.25px;">
+        	&nbsp;<br>
+        </td>
+		<td>
+			<input type="Checkbox" name="city1" value="1"><font color="red" size="5">City</font>
+		</td>
+        <td rowspan="2" bgcolor="silver" style="width:.25px;">
+        	&nbsp;<br>
+        </td>
+		<td>
+			<input type="Checkbox" name="zip1" value="1"><font color="red" size="5">Postal Code</font>
+		</td>
+        <td rowspan="2" bgcolor="silver" style="width:.25px;">
+        	&nbsp;<br>
+        </td>
+		<td colspan="1">
+			<input type="Checkbox" name="gender1" value="1"><font color="red" size="5">Gender</font>
+		</td>
+        <td rowspan="2" bgcolor="silver" style="width:.25px;">
+        	&nbsp;<br>
+        </td>
+		<td>
+			<input type="Checkbox" name="interest1" value="1"><font color="red" size="5">Willing to Bridge</font>
+		</td>
+        <td rowspan="2" bgcolor="silver" style="width:.25px;">
+        	&nbsp;<br>
+        </td>
+		<td align="center">
+			<input type="Checkbox" name="flang1" value="1"><font color="red" size="5">Spanish</font>
+		</td>
+    </tr>
+  	<tr>
+    	<td align="right">
+		<?php
+			$sqldistrict = "SELECT DISTINCT district FROM contacts ORDER BY district";
+			$districts = $conn->query($sqldistrict);
+		?>
+			<table>
+				<tr>
+    				<td>
+  						<select name="searchdistrict" style="width:130px;">
+                            	<option>Choose a District</option>
+  							<?php while($districtrow = $districts->fetch_assoc()) {?>
+    							<option value="<?php echo $districtrow["district"]?>"><?php echo $districtrow["district"]?></option>
+  							<?php }?>
+  						</select>
+         			</td>
+    			</tr>
 			</table>
-        <center>
-        
-	<?php }  ?>
-    
-		<center>
-			<table cellpadding="0" cellspacing="0" border="0" bordercolor="red" align="center">
-			    <tr>
-			    	<td valign="baseline">
-						<form method="get" action="add1.php" name="button11">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
-		    	        	<input type="submit" value="Add a Contact" name="b11" style="width:260px; height: 24px; background-color: whitesmoke;" size=35 />
-			          	</form>
-					</td>
-			    	<td valign="baseline">
-						<form method="get" action="update1.php"name="button12">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Update Contact Info" name="b12" style="width:260px; height: 24px; background-color: whitesmoke;" size=35>
-						</form>
-			        </td>
-			    	<td valign="baseline">
-						<form method="get" action="delete1.php" name="button13">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
-		    	        	<input type="submit" value="Delete a Contact" name="b13" style="width:260px; height: 24px; background-color: whitesmoke;" size=35 />
-			          	</form>
-					</td>
-				</tr>
+        </td>
+    	<td align="right">	
+		<?php
+			$sqlcity = "SELECT DISTINCT city FROM contacts ORDER BY city";
+			$cities = $conn->query($sqlcity);
+		?>
+			<table>
+				<tr>
+    				<td>
+  						<select name="searchcity" style="width:130px;">
+  							<?php while($cityrow = $cities->fetch_assoc()) {?>
+    							<option value="<?php echo $cityrow["city"]?>"><?php echo $cityrow["city"]?></option>
+  							<?php }?>
+  						</select>
+         			</td>
+     			</tr>
 			</table>
-        <center>  
-<!---- insert contact table here ------>           
- 
-
-<?php
-	
-	$sqlcity = "SELECT DISTINCT city FROM contacts ORDER BY city";
-	$cities = $conn->query($sqlcity);
-  		while($cityrow = $cities->fetch_assoc()) 
-		{
-			 echo "city: " . $cityrow["city"] . "<br>";
-		}
-?>
-<?php
-	
-	$sqlzip = "SELECT DISTINCT zip FROM contacts ORDER BY zip";
-	$zips = $conn->query($sqlzip);
-  		while($ziprow = $zips->fetch_assoc()) 
-		{
-			 echo "info: " . $ziprow["zip"] . "<br>";
-		}
-?>
-<?php
-	
-	$sqldistrict = "SELECT DISTINCT district FROM contacts ORDER BY district";
-	$districts = $conn->query($sqldistrict);
-  		while($districtrow = $districts->fetch_assoc()) 
-		{
-			 echo "info: " . $districtrow["district"] . "<br>";
-		}
-?>
+		</td>
+    	<td align="right">
+		<?php
+			$sqlzip = "SELECT DISTINCT zip FROM contacts ORDER BY zip";
+			$zips = $conn->query($sqlzip);
+		?>
+			<table>
+				<tr>
+    				<td>
+  						<select name="searchzip" style="width:130px;">
+  							<?php while($ziprow = $zips->fetch_assoc()) {?>
+    							<option value="<?php echo $ziprow["zip"]?>"><?php echo $ziprow["zip"]?></option>
+  							<?php }?>
+  						</select>
+         			</td>
+     			</tr>
+			</table>
+        </td>
+        <td align="right">
+        	<select name="searchgender" style="width:130px;">
+            	<option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+        </td>
+        <td align="right">
+        	<select name="searchinterest" style="width:130px;">
+            	<option value="All">All</option>
+                <option value="Corrections">Corrections</option>
+                <option value="Treatment">Treatment</option>
+            </select>
+        </td>
+        <td>
+        	&nbsp;<br>
+        </td>
+	</tr>
+    <tr>
+        <td colspan="13" align="center">
+        	<br>
+        	<input type="submit" name="b1" value="Search">
+			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="11" align="center">
+        	<hr color="silver">
+        </td>
+    </tr>
     
+</table>
+</form> 
+
+<br><br><br>
+<font size="6" color="red">Click on the column title to sort by that column</font>
+<hr>
 <table border="0" width="100%">
  <tr>
             <!--Each table column is echoed in to a td cell-->
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=district&pass=<?php echo $getpass; ?>"><font size="6">State<br>District</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=first&pass=<?php echo $getpass; ?>"><font size="6">Name</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=city&pass=<?php echo $getpass; ?>"><font size="6">Address</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=city&pass=<?php echo $getpass; ?>"><font size="6">County</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=gender, age&pass=<?php echo $getpass; ?>"><font size="6">Gender<br>Age</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=district&passwords=<?php echo $getpass; ?>"><font size="6">State<br>District</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=first&passwords=<?php echo $getpass; ?>"><font size="6">Name</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=city&passwords=<?php echo $getpass; ?>"><font size="6">Address</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=city&passwords=<?php echo $getpass; ?>"><font size="6">County</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=gender, age&passwords=<?php echo $getpass; ?>"><font size="6">Gender<br>Age</font></a></td>
             <td valign="bottom" align="left"><font size="6">Phone<br>Email</font></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=interest&pass=<?php echo $getpass; ?>"><font size="6">Willing<br>&nbsp;&nbsp;&nbsp;to<br> Bridge</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=flang DESC&pass=<?php echo $getpass; ?>"><font size="6">Other<br>Language</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=interest&passwords=<?php echo $getpass; ?>"><font size="6">Willing<br>&nbsp;&nbsp;&nbsp;to<br> Bridge</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=flang DESC&passwords=<?php echo $getpass; ?>"><font size="6">Other<br>Language</font></a></td>
             <td valign="bottom" align="left"><font size="6">Date<br>Added</font></td>
             <td valign="bottom" align="left"><font size="6">Date<br>Updated</font></td>
         </tr>    
@@ -181,11 +196,22 @@
         <?php } ?>
         
 </table>
+</center>
 <!---- end contact table ------->                          
 <?php 
-	}                  
+	               
 $conn->close();
 
 ?> 
+
+$lorem = 'potato';
+
+if(isset($lorem)){
+    echo 'isset true' . '<br />';
+}else{
+    echo 'isset false' . '<br />';
+}
+
+
 </body>
 </html>   
