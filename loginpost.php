@@ -94,6 +94,7 @@ the more options checked the fewer results will be found
 				<tr>
     				<td>
   						<select name="searchcity" style="width:130px;">
+						  	<option>Choose a City</option>
   							<?php while($cityrow = $cities->fetch_assoc()) {?>
     							<option value="<?php echo $cityrow["city"]?>"><?php echo $cityrow["city"]?></option>
   							<?php }?>
@@ -111,6 +112,7 @@ the more options checked the fewer results will be found
 				<tr>
     				<td>
   						<select name="searchzip" style="width:130px;">
+						  	<option>Choose a Postal Code</option>
   							<?php while($ziprow = $zips->fetch_assoc()) {?>
     							<option value="<?php echo $ziprow["zip"]?>"><?php echo $ziprow["zip"]?></option>
   							<?php }?>
@@ -121,13 +123,15 @@ the more options checked the fewer results will be found
         </td>
         <td align="right">
         	<select name="searchgender" style="width:130px;">
+			<option>Select Gender</option>
             	<option value="Female">Female</option>
                 <option value="Male">Male</option>
             </select>
         </td>
         <td align="right">
         	<select name="searchinterest" style="width:130px;">
-            	<option value="All">All</option>
+				<option>Select Facility</option>
+            	<option value="Both">Both</option>
                 <option value="Corrections">Corrections</option>
                 <option value="Treatment">Treatment</option>
             </select>
