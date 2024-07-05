@@ -208,13 +208,7 @@ $conn->close();
 
 ?> 
 
-$lorem = 'potato';
 
-if(isset($lorem)){
-    echo 'isset true' . '<br />';
-}else{
-    echo 'isset false' . '<br />';
-}
 
 
 </body>
