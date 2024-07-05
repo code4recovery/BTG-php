@@ -150,7 +150,8 @@
         	<select size="1" 
             		name="gender" 
                     style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;">
-		 				<option>Male</option>
+		 				<option>Select Gender</option>
+						<option>Male</option>
 						<option>Female</option>
         	</select>
         </td>
