@@ -41,7 +41,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql = "INSERT INTO contacts
+$sql = "INSERT INTO btgcontacts
 (state, district, first, last, interest, address, city, zip, county, phone, email, added, goodtogo, age, gender, flang) 
 VALUES ('$state', '$district', '$first', '$last', '$interest', '$address', '$city', $zip, '$county', '$phone', '$email', '$added', 1, $age, '$gender', '$flang')";
 

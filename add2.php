@@ -1,11 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
-<body>
-
 
 <?php
 $servername = "mysql24.ezhostingserver.com";
@@ -41,7 +33,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql = "INSERT INTO contacts
+$sql = "INSERT INTO btgcontacts
 (state, district, first, last, interest, address, city, zip, county, phone, email, added, goodtogo, age, gender, flang) 
 VALUES ('$state', '$district', '$first', '$last', '$interest', '$address', '$city', $zip, '$county', '$phone', '$email', '$added', 1, $age, '$gender', '$flang')";
 
@@ -54,9 +46,7 @@ $conn->close();
 ?> 
 
 <?php 
-global $pass;
-$pass = "jones";
-include('loginpost.php');
+include('add1.php');
 ?>
     
 </body>

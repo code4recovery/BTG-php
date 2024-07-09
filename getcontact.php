@@ -86,7 +86,7 @@ the more options checked the fewer results will be found
   	<tr>
     	<td align="right">
       <?php
-			$sqldistrict = "SELECT DISTINCT district FROM contacts ORDER BY district";
+			$sqldistrict = "SELECT DISTINCT district FROM btgcontacts ORDER BY district";
 			$districts = $conn->query($sqldistrict);
 		?>
 			<table>
@@ -104,7 +104,7 @@ the more options checked the fewer results will be found
         </td>
     	<td align="right">	
 		<?php
-			$sqlcity = "SELECT DISTINCT city FROM contacts ORDER BY city";
+			$sqlcity = "SELECT DISTINCT city FROM btgcontacts ORDER BY city";
 			$cities = $conn->query($sqlcity);
 		?>
 			<table>
@@ -122,7 +122,7 @@ the more options checked the fewer results will be found
 		</td>
     	<td align="right">
 		<?php
-			$sqlzip = "SELECT DISTINCT zip FROM contacts ORDER BY zip";
+			$sqlzip = "SELECT DISTINCT zip FROM btgcontacts ORDER BY zip";
 			$zips = $conn->query($sqlzip);
 		?>
 			<table>
@@ -199,7 +199,7 @@ the more options checked the fewer results will be found
 	if ($conn->connect_error) {
   		die("Connection failed: " . $conn->connect_error);
 	}
-  $sql = "SELECT * FROM contacts WHERE 0=0";
+  $sql = "SELECT * FROM btgcontacts WHERE 0=0";
 if (isset($_GET['district1'])) {
   $sql .= ' AND district = "' . $_GET['searchdistrict'] . '"';
 }else{ '"'; }

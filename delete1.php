@@ -22,7 +22,7 @@
 
 	$getpass = $_GET["passwords"];
 		
-	$sql = "SELECT * FROM btgwwlogin WHERE passwords = '$getpass'";
+	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
 	$result = $conn->query($sql);
   		// output data of each row
   		while($row = $result->fetch_assoc()) 
@@ -123,9 +123,9 @@
 	
 	if ($admindistrict > 0) 
 		{
-	$sql = "SELECT * FROM contacts WHERE district = $admindistrict";
+	$sql = "SELECT * FROM btgcontacts WHERE district = $admindistrict";
 		} else {
-	$sql = "SELECT * FROM contacts";
+	$sql = "SELECT * FROM btgcontacts";
 		}
 	$result = $conn->query($sql);
 	// output data of each row

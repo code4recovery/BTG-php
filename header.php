@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>BTG Contact List</title>
+
 </head>
 <body>
 <!--- get username and password from database and compare to passed along --->
@@ -21,41 +22,21 @@
 	}
 
 	$getpass = $_GET["passwords"];
-	$contactid = $_GET["contactid"];
-	
+		
 	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
 	$result = $conn->query($sql);
   		// output data of each row
   		while($row = $result->fetch_assoc()) 
   		{
 			$adminlevel = $row["userlevel"];
-			$usernames = $row["usernames"];
-			$passwords = $row["passwords"];
+			$usernames = $row["usernames"] . " " . $passwords = $row["passwords"];
   		}
 	
-	if ($result->num_rows > 0) {
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "DELETE FROM btgcontacts WHERE contactid='$contactid'";
-
-if ($conn->query($sql) === TRUE) {
-  echo "Record deleted successfully";
-} else {
-  echo "Error deleting record: " . $conn->error;
-}
-
-
-		if ($adminlevel > 1) { 
-
+	if ($result->num_rows > 0){ 
 	?>
-		<center>
-			<table cellpadding="0" cellspacing="0" border="0" bordercolor="red" align="center">
+	<center>
+			<table cellpadding="0" cellspacing="0" border="0" align="center">
+	<?php if ($adminlevel > 1) { ?>
 			    <tr>
 			    	<td valign="top">
 						<form method="get" action="admin3.php"name="button21">
@@ -63,7 +44,7 @@ if ($conn->query($sql) === TRUE) {
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Add an Admin" name="b21" style="width:260px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Add an Admin" name="b21" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
@@ -72,7 +53,7 @@ if ($conn->query($sql) === TRUE) {
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Update an Admin" name="b22" style="width:260px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Update an Admin" name="b22" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
@@ -81,18 +62,11 @@ if ($conn->query($sql) === TRUE) {
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Delete an Admin" name="b23" style="width:260px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Delete an Admin" name="b23" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 				</tr>
-			</table>
-        <center>
-	
-	
 	<?php }  ?>
-    
-		<center>
-			<table cellpadding="0" cellspacing="0" border="0" bordercolor="red" align="center">
 			    <tr>
 			    	<td valign="baseline">
 						<form method="get" action="add1.php" name="button11">
@@ -100,7 +74,7 @@ if ($conn->query($sql) === TRUE) {
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-		    	        	<input type="submit" value="Add a Contact" name="b11" style="width:260px; height: 24px; background-color: whitesmoke;" size=35 />
+		    	        	<input type="submit" value="Add a Contact" name="b11" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
 			    	<td valign="baseline">
@@ -109,7 +83,7 @@ if ($conn->query($sql) === TRUE) {
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-				        	<input type="submit" value="Update Contact Info" name="b12" style="width:260px; height: 24px; background-color: whitesmoke;" size=35>
+				        	<input type="submit" value="Update Contact Info" name="b12" style="width:125px; height: 24px; background-color: whitesmoke;" size=35>
 						</form>
 			        </td>
 			    	<td valign="baseline">
@@ -118,24 +92,30 @@ if ($conn->query($sql) === TRUE) {
 							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-		    	        	<input type="submit" value="Delete a Contact" name="b13" style="width:260px; height: 24px; background-color: whitesmoke;" size=35 />
+		    	        	<input type="submit" value="Delete a Contact" name="b13" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
 				</tr>
+                <tr>
+			    	<td valign="baseline" colspan="3" align="center">
+						<form method="get" action="loginpost.php" name="button14">
+							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
+							<input type="Hidden" name="sorter" value="city, zip" />
+							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
+            				<input type="hidden" name="district" value="<?php echo $district;?>">
+		    	        	<input type="submit" value="View all FROM btgcontacts" name="b13" style="width:125px; height: 24px; background-color: silver;" size=35 />
+			          	</form>
+					</td>
 			</table>
-        <center>
-		   
-
-<!------- add page here -------->
-
-
- <!------- end page here ------------>                   
-                    
+        </center>
+        <br /><br /><br />
+        
 <?php 
-	}
+	}else	{
+
+  echo "Have a bad day!";
+ }
+
 $conn->close();
 	
 ?> 
-   
-</body>
-</html>
