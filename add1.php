@@ -43,7 +43,7 @@
         <td width="50">
             <INPUT name="age"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56 required
         </td>
     </tr>
     <tr>
