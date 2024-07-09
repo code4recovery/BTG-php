@@ -1,38 +1,78 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Developer" content="tectrics">
+<meta name="ProgId" content="Jones">
 </head>
 
-<body>
-<center>
-<form action="loginpost.php" method="get" name="login" target="_self">
-<table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>
-    	<input name="user" type="text" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-    	<input name="pass" type="text" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-    	<input name="b1" type="submit" />
-        <input name="sorter" type="hidden" value="city, zip" />
-    </td>
-  </tr>
-</table>
-</form>
-</center>
+<SCRIPT LANGUAGE="JavaScript">
+function infoscroll(seed,looped)
+{
+  var text1  = "   When anyone, anywhere       ";
+  var text2  = "   reaches out for help       ";        
+  var text3  = "   I want        ";         
+  var text4  = "   the hand of AA.       ";
+  var text5  = "   to be there       ";        
+  var text6  = "   and for that     ";        
+  var text7  = "   I am Responsible       ";        
+  var text8  = "   ..............       ";
+  var msg=text1+text2+text3+text4+text5+text6+text7+text8;
+  var putout = " ";
+  var c   = 1;
 
+  if (looped > 99) 
+  {  window.status="<Thanks for visiting!>";  }
+  else if (seed > 100) 
+  {
+     seed--;
+     var cmd="infoscroll(" + seed + "," + looped + ")";
+     timerTwo=window.setTimeout(cmd,100);
+  }
+  else if (seed <= 100 && seed > 0) 
+  {
+    for (c=0 ; c < seed ; c++) 
+    {  putout+=" ";  }
+    putout+=msg.substring(0,100-seed);	
+    seed--;
+    var cmd="infoscroll(" + seed + "," + looped + ")";
+    window.status=putout;
+    timerTwo=window.setTimeout(cmd,100);
+  }
+  else if (seed <= 0) 
+  {
+    if (-seed < msg.length) 
+    {
+      putout+=msg.substring(-seed,msg.length);
+      seed--;
+      var cmd="infoscroll(" + seed + "," + looped + ")";
+      window.status=putout;
+      timerTwo=window.setTimeout(cmd,100); // 100
+    }
+    else 
+    {
+      window.status=" ";
+      looped += 1;
+      var cmd = "infoscroll(100," + looped + ")";
+      timerTwo=window.setTimeout(cmd,75); // 75
+    }
+  }
+}
+// -->
 
-
-
-
-
-</body>
-</html>
+<!--
+infoscroll(100,1)
+// -->
+</script>
+<frameset framespacing="0" border="0" cols="1,*" frameborder="0">
+    <frame name="contents"
+  		 target="main"
+		 src="splash1.php"
+		 scrolling="yes"
+		 noresize>
+    <frame name="main" src="splash1.php">
+    <noframes>
+    <body>
+    <p>This page uses frames, but your browser doesn't support them.</p>
+    </body>
+    </noframes>
+</frameset>

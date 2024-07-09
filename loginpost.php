@@ -175,10 +175,10 @@ the more options checked the fewer results will be found
         </tr>    
 <?php
 	
-	$sqlFROM btgcontacts = "SELECT * FROM btgcontacts ORDER BY $sorter";
-	$FROM btgcontacts = $conn->query($sqlFROM btgcontacts);
+	$sqlcontacts = "SELECT * FROM btgcontacts ORDER BY $sorter";
+	$contacts = $conn->query($sqlcontacts);
 	// output data of each row
-	while($contactrow = $FROM btgcontacts->fetch_assoc())
+	while($contactrow = $contacts->fetch_assoc())
 	{
 	
 ?>		

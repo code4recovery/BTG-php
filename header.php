@@ -7,6 +7,7 @@
 </head>
 <body>
 <!--- get username and password from database and compare to passed along --->
+
 <?php
 
 	$servername = "mysql24.ezhostingserver.com";
@@ -103,7 +104,7 @@
 							<input type="Hidden" name="sorter" value="city, zip" />
 							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
             				<input type="hidden" name="district" value="<?php echo $district;?>">
-		    	        	<input type="submit" value="View all FROM btgcontacts" name="b13" style="width:125px; height: 24px; background-color: silver;" size=35 />
+		    	        	<input type="submit" value="View all FROM btgcontacts" name="b13" style="width:250px; height: 24px; background-color: silver;" size=35 />
 			          	</form>
 					</td>
 			</table>
