@@ -11,8 +11,7 @@
         <td align="left" colspan="3">
         	<INPUT name="first"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56
-					 required>
+		 			 size=56>
         </td>
     </tr>
     <tr>
