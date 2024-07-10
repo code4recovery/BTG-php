@@ -217,12 +217,12 @@ if (isset($_GET['gender1'])) {
 }else{ '"'; }
 
 if (isset($_GET['interest1'])) {
-  $sql .= ' AND interest = "' . $_GET['searchinterest'] . '"' ;
-}else{ '"'; }
+	$sql .= ' AND (interest = "' . $_GET['searchinterest'] . '" OR interest="both")';
+  }else{ '"'; }
 
 if (isset($_GET['flang1'])) {
   $sql .= ' AND flang = "' . $_GET['flang1'] . '"' ;
-}else{ '"'; }
+}
 
 
 $result = $conn->query($sql);	
