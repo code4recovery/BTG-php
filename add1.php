@@ -7,7 +7,7 @@
     	<td width="111" align="right">
         	&nbsp;<br>
         </td>
-        <td align="left" colspan="3"> 
+        <td align="center" colspan="3"> 
 			<font color="darkblue" size="4">Add a Contact</font><br><br /><br />
         </td>
     </tr>
