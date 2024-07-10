@@ -1,133 +1,199 @@
 <?php include 'header.php';?>
+
 <!------- add page here -------->
-// define variables and set to empty values
-<?php
-$firstErr = $lastErr = $genderErr = $ageErr = $emailErr = $cityErr = $stateErr = $zipErr = $countyErr = $phoneErr = $interestErr = $districtErr = "";
-$first = $last = $gender = $age = $email = $city = $state = $zip = $county = $phone = $interest = $district = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["first"])) {
-    $firstrr = "First Name is required";
-  } else {
-    $first = test_input($_POST["first"]);
-  }
-
-  if (empty($_POST["last"])) {
-    $lasyErr = "Last Name is required";
-  } else {
-    $last = test_input($_POST["last"]);
-  }
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-  if (empty($_POST["age"])) {
-    $$ageErr = "Age is required";
-  } else {
-    $age = test_input($_POST["age"]);
-  }
-
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-  }
-
-  if (empty($_POST["city"])) {
-    $cityErr = "City is required";
-  } else {
-    $city = test_input($_POST["city"]);
-  }
-  
-  if (empty($_POST["state"])) {
-    $stateErr = "State is required";
-  } else {
-    $state = test_input($_POST["state"]);
-  }
-
-  if (empty($_POST["zip"])) {
-    $zipErr = "Postal Code is required";
-  } else {
-    $zip = test_input($_POST["zip"]);
-  }
-
-  if (empty($_POST["county"])) {
-    $countyErr = "County is required";
-  } else {
-    $county = test_input($_POST["county"]);
-  }
-
-  if (empty($_POST["phone"])) {
-    $phoneErr = "Phone Number is required";
-  } else {
-    $phone = test_input($_POST["phone"]);
-  }
-
-  if (empty($_POST["interest"])) {
-    $interestErr = "Facility Type is required";
-  } else {
-    $interest = test_input($_POST["interest"]);
-  }
-
-  if (empty($_POST["district"])) {
-    $districtErr = "District is required";
-  } else {
-    $district = test_input($_POST["district"]);
-  }
-}
-function test_input($data) {
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-  }
-?>
-
-<font color="darkblue" size="4">Add a Contact</font><br><br /><br />
-<p><span class="error">* required field</span></p>
-<form method="POST" name="add1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    First Name:
-        <INPUT name="first"	style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><span class="error">* <?php echo $firstErr;?></span><br><br>
-	Last Name:
-     	<INPUT name="last"	style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><span class="error">* <?php echo $lastErr;?></span><br><br>
-    Gender:
-    	<input type="radio" name="gender" value="female">Female
-		<input type="radio" name="gender" value="male">Male			
-		<span class="error">* <?php echo $genderErr;?></span><br><br>
-    Age:
-        <INPUT name="age" style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><span class="error">* <?php echo $ageErr;?></span><br><br>
-    Email Address:
-        <INPUT name="email" style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><span class="error">* <?php echo $emailErr;?></span><br><br>
-    Street Address:
-        <INPUT name="address" style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><br><br>
-    City:    	
-        <INPUT name="city" style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;"size=56><span class="error">* <?php echo $cityErr;?></span><br><br>
-    State:			
-        <INPUT name="state" style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;"size=56><span class="error">* <?php echo $stateErr;?></span><br><br>
-    Postal Code:
-        <INPUT name="zip" style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><span class="error">* <?php echo $zipErr;?></span><br><br>
-    County:
-        <INPUT name="county"style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><span class="error">* <?php echo $countyErr;?></span><br><br>
-    Phone:
-        <INPUT name="phone" style="WIDTH: 268px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><span class="error">* <?php echo $phonrErr;?></span><br><br>
-    Willing to Bridge:
-		<input type="radio" name="interest" value="Corrections">Corrections
-		<input type="radio" name="interest" value="Treatment">Treatment
-		<input type="radio" name="interest" value="Both">Both
-		<span class="error">* <?php echo $interestErr;?></span><br><brb>
-    District Number:
-        <INPUT name="district" style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;" size=4><span class="error">* <?php echo $districtErr;?></span><br><br>
-    Spanish Speaking
-        <input type="checkbox" name="flang" value="1">
-    Other Language:
-        <INPUT name="olang"	 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;" size=56><br><br>
+<center>   
+<form action="add2.php" method="get" name="add1">
+<table style="width:300px;" border="0">
+	<tr>
+    	<td width="111" align="right">
+        	&nbsp;<br>
+        </td>
+        <td align="center" colspan="3"> 
+			<font color="darkblue" size="4">Add a Contact</font><br><br /><br />
+        </td>
+    </tr>
+	<tr>
+    	<td width="111" align="right">
+        	First Name:
+        </td>
+        <td align="left" colspan="3">
+        	<INPUT name="first" id="first"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required 
+           oninvalid="this.setCustomValidity('Please enter the first name of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the first name of the contact">
+        </td>
+    </tr>
+    <tr>
+       	<td align="right" nowrap>
+        	Last Name:
+        </td>
+        <td align="left" colspan="3">
+        	<INPUT name="last" id="last"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required 
+           oninvalid="this.setCustomValidity('Please enter the last name of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the last name of the contact">
+        </td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap>
+        	Gender:
+        </td>
+        <td width="100">
+        	<select size="1" 
+            		name="gender" 
+                    style="WIDTH: 125px; HEIGHT: 22px; background-color: white; color: darkblue;">
+		 				<option>Select Gender</option>
+						<option>Male</option>
+						<option>Female</option>
+        	</select>
+        </td>
+        <td width="104" align="right">
+        	Age:
+        </td>
+        <td width="50">
+            <INPUT name="age" id="age"
+		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required 
+           oninvalid="this.setCustomValidity('Please enter the age of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the age of the contact">
+        </td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap>
+        	Email Address:
+        </td>
+        <td align="left" colspan="3">
+        	<INPUT name="email"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required  
+           oninvalid="this.setCustomValidity('Please enter the email address of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the email address of the contact">
+        </td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap>
+        	Street Address:
+        </td>
+        <td colspan="3">
+        	<INPUT name="address"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required 
+           oninvalid="this.setCustomValidity('Please enter the street address of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the street address of the contact">
+        </td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap>
+        	City:
+        </td>
+        <td align="left" colspan="3">
+        	<INPUT name="city"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required 
+           oninvalid="this.setCustomValidity('Please enter the city of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the city of the contact">
+        </td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap>
+        	State:
+        </td> 
+    	<td align="left">
+			<INPUT name="state"
+		 			 style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required minlength="2" maxlength="2"
+           oninvalid="this.setCustomValidity('Please enter the abreviation of the state or providence');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the abreviation of the state or providence">
+        </td>
+        <td align="right" nowrap>
+            Postal Code:
+        </td>
+        <td>
+        	<INPUT name="zip"
+		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required 
+           oninvalid="this.setCustomValidity('Please enter the Postal Code of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the age of the contact">
+		</td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap>
+        	County:
+        </td>
+        <td align="left" colspan="3">
+        	<INPUT name="county"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56 required
+           oninvalid="this.setCustomValidity('Please enter the county name of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the county name of the contact">
+        </td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap>
+        	Phone:
+        </td>
+        <td align="left" colspan="3">
+        	<INPUT name="phone"
+		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;px"
+		 			 size=56 required
+           oninvalid="this.setCustomValidity('Please enter the age of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the age of the contact">
+        </td>
+    </tr>
+    <tr>
+    	<td align="right" nowrap="nowrap">
+        	Willing to Bridge:
+        </td>
+        <td align="left">
+        	<select size="1" 
+            		name="interest" 
+                    style="WIDTH: 150px; HEIGHT: 26px; background-color: white; color: darkblue;">
+		 				<option>Select Facility Type</option>	
+						<option>Both</option>
+						<option>Corrections</option>
+                        <option>Treatment</option>
+        	</select>
+        </td>
+    	<td align="right" colspan="1" nowrap>
+        	District:
+        </td>
+        <td align="left">
+        	<INPUT name="district"
+		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=4 required
+           oninvalid="this.setCustomValidity('Please enter the district or region of the contact');" 
+           onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the district or region of the contact">
+        </td>
+    </tr>
+	<tr>
+    	<td align="right" nowrap>
+        	Spanish Speaking
+        </td>
+        <td nowrap colspan="3">
+        	<input type="checkbox" name="flang">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Other Language:&nbsp;
+        	<INPUT name="olang"
+		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 size=56>
+		</td>
+    </tr>
+    <tr>
+		<td>
+			&nbsp;<br>
+		</td>	
+		<td align="center" colspan="3">
 			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
 			<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
 			<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
 			<input type="Submit" value="Add Contact" name="b2">
+		</td>
+	</tr>
+</table>
 </form>                    
+</center>                    
  <!------- end page here ------------>                   
 </body>
 </html> 

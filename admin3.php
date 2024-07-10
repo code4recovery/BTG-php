@@ -1,5 +1,7 @@
 <?php include 'header.php';?>
+
 <!------- add page here -------->
+
 <center>    
 <font color="darkblue" size="4">Add a Coordinator</font><br><br /><br />
 <form action="admin3a.php" method="get" name="add1">
@@ -10,9 +12,10 @@
         </td>
         <td align="left" colspan="2">
         	<INPUT name="myuser"
-		 			 message="Please enter a username"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required   oninvalid="this.setCustomValidity('Please enter the admin username')">
+		 			 size=56 required
+           			 oninvalid="this.setCustomValidity('Please enter the admin username');" 
+           			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the admin username">
         </td>
     </tr>
     <tr>
@@ -21,10 +24,10 @@
         </td>
         <td align="left" colspan="2">
         	<INPUT name="mypassword"
-		 			 message="Please enter a password"
-		 			 required="yes"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the admin password')">
+		 			 size=56 required
+           			 oninvalid="this.setCustomValidity('Please enter the admin password');" 
+           			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the admin password">
         </td>
     </tr>
     <tr>
@@ -33,18 +36,18 @@
         </td>
         <td align="left" colspan="1">
         	<INPUT name="district"
-		 			 message="Please enter the district"
-		 			 required="yes"
 		 			 style="WIDTH: 60px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the admin district or region - main admin sould be zero')">
+		 			 size=56 required 
+           			 oninvalid="this.setCustomValidity('Please enter the district or region of the admin - system admins should be zero');" 
+           			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the district or region of the admin - system admins should be zero">
         </td>
     	<td align="right" nowrap>
         	Admin Level:&nbsp;
         	<select size="1" 
-            		name="userlevel" 
-                    style="WIDTH: 130px; HEIGHT: 22px; background-color: white; color: darkblue;">
-		 				<option value="1">Local Coordinator</option>
-						<option value="2">System Admin</option>
+            		name="userlevel" id="userlevel" required>
+		 			<option value="">Select Level</option>	
+					<option value="1">Local Coordinator</option>
+					<option value="2">System Admin</option>
         	</select>
         </td>
     </tr>

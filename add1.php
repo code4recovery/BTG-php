@@ -1,4 +1,5 @@
 <?php include 'header.php';?>
+
 <!------- add page here -------->
 <center>   
 <form action="add2.php" method="get" name="add1">
@@ -16,9 +17,11 @@
         	First Name:
         </td>
         <td align="left" colspan="3">
-        	<INPUT name="first"
+        	<INPUT name="first" id="first"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the first name of the contact')">
+		 			 size=56 required 
+           			 oninvalid="this.setCustomValidity('Please enter the first name of the contact');" 
+           			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the first name of the contact">
         </td>
     </tr>
     <tr>
@@ -26,9 +29,11 @@
         	Last Name:
         </td>
         <td align="left" colspan="3">
-        	<INPUT name="last"
+        	<INPUT name="last" id="last"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the last name of the contact')">
+		 			 size=56 required 
+           			 oninvalid="this.setCustomValidity('Please enter the last name of the contact');" 
+           			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the last name of the contact">
         </td>
     </tr>
     <tr>
@@ -37,20 +42,22 @@
         </td>
         <td width="100">
         	<select size="1" 
-            		name="gender" 
+            		name="gender" required
                     style="WIDTH: 125px; HEIGHT: 22px; background-color: white; color: darkblue;">
-		 				<option>Select Gender</option>
-						<option>Male</option>
-						<option>Female</option>
+		 				<option value="">Select Gender</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
         	</select>
         </td>
         <td width="104" align="right">
         	Age:
         </td>
         <td width="50">
-            <INPUT name="age"
+            <INPUT name="age" id="age"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required   oninvalid="this.setCustomValidity('Please enter the age of the contact')">
+		 			 size=56 required 
+           			 oninvalid="this.setCustomValidity('Please enter the age of the contact');" 
+           			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the age of the contact">
         </td>
     </tr>
     <tr>
@@ -60,7 +67,9 @@
         <td align="left" colspan="3">
         	<INPUT name="email"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required   oninvalid="this.setCustomValidity('Please enter the contact email address')">
+		 			 size=56 required  
+          			 oninvalid="this.setCustomValidity('Please enter the email address of the contact');" 
+          			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the email address of the contact">
         </td>
     </tr>
     <tr>
@@ -70,7 +79,9 @@
         <td colspan="3">
         	<INPUT name="address"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the address of the contact')">
+		 			 size=56 required 
+          			 oninvalid="this.setCustomValidity('Please enter the street address of the contact');" 
+            		 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the street address of the contact">
         </td>
     </tr>
     <tr>
@@ -80,7 +91,9 @@
         <td align="left" colspan="3">
         	<INPUT name="city"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the city name')">
+		 			 size=56 required 
+          			 oninvalid="this.setCustomValidity('Please enter the city of the contact');" 
+          			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the city of the contact">
         </td>
     </tr>
     <tr>
@@ -90,7 +103,9 @@
     	<td align="left">
 			<INPUT name="state"
 		 			 style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the abreviation of the state')">
+		 			 size=56 required minlength="2" maxlength="2"
+          			 oninvalid="this.setCustomValidity('Please enter the abreviation of the state or providence');" 
+          			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the abreviation of the state or providence">
         </td>
         <td align="right" nowrap>
             Postal Code:
@@ -98,7 +113,9 @@
         <td>
         	<INPUT name="zip"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the postal code')">
+		 			 size=56 required 
+          			 oninvalid="this.setCustomValidity('Please enter the Postal Code of the contact');" 
+          			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the age of the contact">
 		</td>
     </tr>
     <tr>
@@ -108,7 +125,9 @@
         <td align="left" colspan="3">
         	<INPUT name="county"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the county name')">
+		 			 size=56 required
+          			 oninvalid="this.setCustomValidity('Please enter the county name of the contact');" 
+          			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the county name of the contact">
         </td>
     </tr>
     <tr>
@@ -118,7 +137,9 @@
         <td align="left" colspan="3">
         	<INPUT name="phone"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;px"
-		 			 size=56 required oninvalid="this.setCustomValidity('Please enter the contact phone number xxx-xxx-xxxx')">
+		 			 size=56 required
+           			 oninvalid="this.setCustomValidity('Please enter the age of the contact');" 
+           			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the age of the contact">
         </td>
     </tr>
     <tr>
@@ -127,12 +148,12 @@
         </td>
         <td align="left">
         	<select size="1" 
-            		name="interest" 
+            		name="interest" required
                     style="WIDTH: 150px; HEIGHT: 26px; background-color: white; color: darkblue;">
-		 				<option>Select Facility Type</option>	
-						<option>Both</option>
-						<option>Corrections</option>
-                        <option>Treatment</option>
+		 				<option value="">Select Facility Type</option>	
+						<option value="Both">Both</option>
+						<option value="Corrections">Corrections</option>
+                        <option value="Treatment">Treatment</option>
         	</select>
         </td>
     	<td align="right" colspan="1" nowrap>
@@ -141,7 +162,9 @@
         <td align="left">
         	<INPUT name="district"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=4 required oninvalid="this.setCustomValidity('Please enter the district or region where the contact serves')">
+		 			 size=4 required
+          			 oninvalid="this.setCustomValidity('Please enter the district or region of the contact');" 
+          			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the district or region of the contact">
         </td>
     </tr>
 	<tr>
