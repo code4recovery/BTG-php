@@ -1,9 +1,16 @@
 <?php include 'header.php';?>
 <!------- add page here -------->
-<center>    
-<font color="darkblue" size="4">Add a Contact</font><br><br /><br />
+<center>   
 <form action="add2.php" method="get" name="add1">
 <table style="width:300px;" border="0">
+	<tr>
+    	<td width="111" align="right">
+        	&nbsp;<br>
+        </td>
+        <td align="left" colspan="3"> 
+			<font color="darkblue" size="4">Add a Contact</font><br><br /><br />
+        </td>
+    </tr>
 	<tr>
     	<td width="111" align="right">
         	First Name:
