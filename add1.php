@@ -18,7 +18,7 @@
         <td align="left" colspan="3">
         	<INPUT name="first"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the first name of the contact')">
         </td>
     </tr>
     <tr>
@@ -28,7 +28,7 @@
         <td align="left" colspan="3">
         	<INPUT name="last"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the last name of the contact')">
         </td>
     </tr>
     <tr>
@@ -50,7 +50,7 @@
         <td width="50">
             <INPUT name="age"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required
+		 			 size=56 required   oninvalid="this.setCustomValidity('Please enter the age of the contact')">
         </td>
     </tr>
     <tr>
@@ -60,7 +60,7 @@
         <td align="left" colspan="3">
         	<INPUT name="email"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required   oninvalid="this.setCustomValidity('Please enter the contact email address')">
         </td>
     </tr>
     <tr>
@@ -70,7 +70,7 @@
         <td colspan="3">
         	<INPUT name="address"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the address of the contact')">
         </td>
     </tr>
     <tr>
@@ -80,7 +80,7 @@
         <td align="left" colspan="3">
         	<INPUT name="city"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the city name')">
         </td>
     </tr>
     <tr>
@@ -90,7 +90,7 @@
     	<td align="left">
 			<INPUT name="state"
 		 			 style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the abreviation of the state')">
         </td>
         <td align="right" nowrap>
             Postal Code:
@@ -98,7 +98,7 @@
         <td>
         	<INPUT name="zip"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the postal code')">
 		</td>
     </tr>
     <tr>
@@ -108,7 +108,7 @@
         <td align="left" colspan="3">
         	<INPUT name="county"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the county name')">
         </td>
     </tr>
     <tr>
@@ -118,7 +118,7 @@
         <td align="left" colspan="3">
         	<INPUT name="phone"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;px"
-		 			 size=56 required>
+		 			 size=56 required oninvalid="this.setCustomValidity('Please enter the contact phone number xxx-xxx-xxxx')">
         </td>
     </tr>
     <tr>
@@ -141,7 +141,7 @@
         <td align="left">
         	<INPUT name="district"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=4>
+		 			 size=4 required oninvalid="this.setCustomValidity('Please enter the district or region where the contact serves')">
         </td>
     </tr>
 	<tr>

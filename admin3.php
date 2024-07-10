@@ -12,7 +12,7 @@
         	<INPUT name="myuser"
 		 			 message="Please enter a username"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required   oninvalid="this.setCustomValidity('Please enter the admin username')">
         </td>
     </tr>
     <tr>
@@ -24,7 +24,7 @@
 		 			 message="Please enter a password"
 		 			 required="yes"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the admin password')">
         </td>
     </tr>
     <tr>
@@ -36,7 +36,7 @@
 		 			 message="Please enter the district"
 		 			 required="yes"
 		 			 style="WIDTH: 60px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56 required>
+		 			 size=56 required  oninvalid="this.setCustomValidity('Please enter the admin district or region - main admin sould be zero')">
         </td>
     	<td align="right" nowrap>
         	Admin Level:&nbsp;
