@@ -60,7 +60,7 @@
         <td align="left" colspan="3">
         	<INPUT name="email"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56 required>
         </td>
     </tr>
     <tr>
@@ -70,7 +70,7 @@
         <td colspan="3">
         	<INPUT name="address"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56 required>
         </td>
     </tr>
     <tr>
@@ -80,7 +80,7 @@
         <td align="left" colspan="3">
         	<INPUT name="city"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56 required>
         </td>
     </tr>
     <tr>
@@ -90,7 +90,7 @@
     	<td align="left">
 			<INPUT name="state"
 		 			 style="WIDTH: 100px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56 required>
         </td>
         <td align="right" nowrap>
             Postal Code:
@@ -98,7 +98,7 @@
         <td>
         	<INPUT name="zip"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56 required>
 		</td>
     </tr>
     <tr>
@@ -108,7 +108,7 @@
         <td align="left" colspan="3">
         	<INPUT name="county"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=56>
+		 			 size=56 required>
         </td>
     </tr>
     <tr>
@@ -118,7 +118,7 @@
         <td align="left" colspan="3">
         	<INPUT name="phone"
 		 			 style="WIDTH: 100%; HEIGHT: 22px; background-color: white; color: darkblue;px"
-		 			 size=56>
+		 			 size=56 required>
         </td>
     </tr>
     <tr>
