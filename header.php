@@ -18,8 +18,9 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
    location("index.php");          
    exit;
 
-}else{
-
+} else {
+	$adminlevel = $_GET["adminlevel"];
+	$district= $GET["district"];
 ?>
 </head>
 <body>
@@ -30,28 +31,16 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
 			    <tr>
 			    	<td valign="top">
 						<form method="get" action="admin3.php"name="button21">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
 				        	<input type="submit" value="Add an Admin" name="b21" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
 						<form method="get" action="admin4.php"name="button22">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
 				        	<input type="submit" value="Update an Admin" name="b22" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
 						<form method="get" action="admin5.php"name="button23">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
 				        	<input type="submit" value="Delete an Admin" name="b23" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
@@ -65,19 +54,11 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
 					</td>
 			    	<td valign="baseline">
 						<form method="get" action="update1.php"name="button12">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
 				        	<input type="submit" value="Update Contact Info" name="b12" style="width:125px; height: 24px; background-color: whitesmoke;" size=35>
 						</form>
 			        </td>
 			    	<td valign="baseline">
 						<form method="get" action="delete1.php" name="button13">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
 		    	        	<input type="submit" value="Delete a Contact" name="b13" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
@@ -85,10 +66,7 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
                 <tr>
 			    	<td valign="baseline" colspan="3" align="center">
 						<form method="get" action="loginpost.php" name="button14">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
 							<input type="Hidden" name="sorter" value="city, zip" />
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
 		    	        	<input type="submit" value="View all FROM btgcontacts" name="b13" style="width:250px; height: 24px; background-color: silver;" size=35 />
 			          	</form>
 					</td>
