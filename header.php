@@ -4,37 +4,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>BTG Contact List</title>
 
+<?php
+require 'config.php';
+
+if(!isset($_SESSION['start']))
+{       
+   $_SESSION['start'] = time();
+}
+if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
+{
+   session_unset();
+   session_destroy();
+   location("index.php");          
+   exit;
+
+}else{
+
+?>
 </head>
 <body>
-<!--- get username and password from database and compare to passed along --->
 
-<?php
-
-	$servername = "mysql24.ezhostingserver.com";
-	$username = "cheri";
-	$password = "M@keC0ntact";
-	$dbname = "btgwwtest";
-
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
-
-	$getpass = $_GET["passwords"];
-		
-	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
-	$result = $conn->query($sql);
-  		// output data of each row
-  		while($row = $result->fetch_assoc()) 
-  		{
-			$adminlevel = $row["userlevel"];
-			$usernames = $row["usernames"] . " " . $passwords = $row["passwords"];
-  		}
-	
-	if ($result->num_rows > 0){ 
-	?>
 	<center>
 			<table cellpadding="0" cellspacing="0" border="0" align="center">
 	<?php if ($adminlevel > 1) { ?>
@@ -71,10 +60,6 @@
 			    <tr>
 			    	<td valign="baseline">
 						<form method="get" action="add1.php" name="button11">
-							<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-							<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-							<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
-            				<input type="hidden" name="district" value="<?php echo $district;?>">
 		    	        	<input type="submit" value="Add a Contact" name="b11" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
@@ -112,11 +97,6 @@
         <br /><br /><br />
         
 <?php 
-	}else	{
-
-  echo "Have a bad day!";
  }
-
 $conn->close();
-	
 ?> 

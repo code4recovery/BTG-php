@@ -3,8 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-</head>
 
+
+</head>
 <body>
 <center>
 <br /><br /><br />
@@ -12,12 +13,12 @@
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-    	<input name="user" type="text" />
+    	<input name="user" type="text" id="user" />
     </td>
   </tr>
   <tr>
     <td>
-    	<input name="passwords" type="password" />
+    	<input name="passwords" type="password" id="passwords" />
     </td>
   </tr>
   <tr>
