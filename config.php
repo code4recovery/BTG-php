@@ -31,5 +31,4 @@
        $_SESSION['passwords'] = $passwords;
        $_SESSION['adminlevel'] = $adminlevel;
        $_SESSION['district'] = $district;
-
 ?>

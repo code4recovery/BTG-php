@@ -19,9 +19,12 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
    exit;
 
 } else {
+
 	
 ?>
+
 </head>
+
 <body>
 
 	<center>
