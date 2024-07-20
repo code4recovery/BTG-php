@@ -1,26 +1,12 @@
+<?php
+require 'config.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>BTG Contact List</title>
 
-<?php
-require 'config.php';
-
-if(!isset($_SESSION['start']))
-{       
-   $_SESSION['start'] = time();
-}
-if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
-{
-   session_unset();
-   session_destroy();
-   location("index.php");          
-   exit;
-
-} else {
-	
-?>
 </head>
 <body>
 
@@ -72,8 +58,3 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
 			</table>
         </center>
         <br /><br /><br />
-        
-<?php 
- }
-$conn->close();
-?> 
