@@ -1,12 +1,14 @@
 
 <?php
 
+require 'config.php';
+
 $added = date('Y/m/d');
 
-$myuser = $_GET['myuser'];
-$mypassword = $_GET['mypassword'];
-$district = $_GET['district'];
-$userlevel = $_GET['userlevel'];
+$myuser = $_POST['myuser'];
+$mypassword = $_POST['mypassword'];
+$district = $_POST['district'];
+$userlevel = $_POST['userlevel'];
 
 $sql = "INSERT INTO btglogin
 (usernames, passwords, userlevel, district) 
