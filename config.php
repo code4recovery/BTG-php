@@ -16,11 +16,11 @@
 
 	// initial login
 	if (isset($_GET["user"]) && isset($_GET["passwords"])) {
-		$getuser = $_GET["passwords"];
+		$getuser = $_GET["user"];
 		$getpass = $_GET["passwords"];
 		
 		// todo sanitize inputs
-		$sql = "SELECT * FROM btglogin WHERE user = '$getuser' AND passwords = '$getpass'";
+		$sql = "SELECT * FROM btglogin WHERE usernames = '$getuser' AND passwords = '$getpass'";
 		$result = $conn->query($sql);
 		// output data of each row
   		while($row = $result->fetch_assoc()) 
