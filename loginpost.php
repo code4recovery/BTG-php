@@ -18,7 +18,7 @@ Then choose the search option from the second row<br />
 <br />
 the more options checked the fewer results will be found
 </font> 
-<form action="getcontact.php" method="GET">          
+<form action="getcontact.php" method="post">          
 <table>
     <tr>
         <td rowspan="5" bgcolor="silver" style="width:.25px;">
@@ -144,7 +144,6 @@ the more options checked the fewer results will be found
         <td colspan="13" align="center">
         	<br>
         	<input type="submit" name="b1" value="Search">
-			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
         </td>
     </tr>
     <tr>
@@ -202,11 +201,7 @@ the more options checked the fewer results will be found
 </table>
 </center>
 <!---- end contact table ------->                          
-<?php 
-	               
-$conn->close();
 
-?> 
 
 </body>
 </html>   

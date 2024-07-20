@@ -17,16 +17,6 @@ $both = "Both";
 ?>
 
 <!---------------------------------------------------------------------------------------------------------------->
-<?php
-// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
-	$getpass = $_GET["passwords"];
-	$sorter = $_GET["sorter"];
-?>	
 <center>
 <br /><br />
 <font color="red" size="6">
@@ -35,7 +25,7 @@ Then choose the search option from the second row<br />
 <br />
 the more options checked the fewer results will be found
 </font> 
-<form action="getcontact.php" method="GET">          
+<form action="getcontact.php" method="get">          
 <table>
     <tr>
         <td rowspan="5" bgcolor="silver" style="width:.25px;">
@@ -161,7 +151,6 @@ the more options checked the fewer results will be found
         <td colspan="13" align="center">
         	<br>
         	<input type="submit" name="b1" value="Search">
-			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
         </td>
     </tr>
     <tr>
@@ -193,12 +182,6 @@ the more options checked the fewer results will be found
         </tr>    
 
 <?php	
-// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
   $sql = "SELECT * FROM btgcontacts WHERE 0=0";
 if (isset($_GET['district1'])) {
   $sql .= ' AND district = "' . $_GET['searchdistrict'] . '"';

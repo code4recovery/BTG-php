@@ -1,13 +1,6 @@
 <!--- get username and password from database and compare to passed along --->
 <?php
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
-
 	$getpass = $_GET["passwords"];
 	$contactid = $_GET["contactid"];
 	
@@ -46,13 +39,6 @@ else
 $flang = 0;;
 
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
  $sql = "UPDATE FROM btgcontacts 
  		 SET goodtogo = $goodtogo,
 		 	 first = '$first',
@@ -72,9 +58,6 @@ if ($conn->connect_error) {
 		 	 olang = '$olang',
 		 	 updated = '$updated'
 		WHERE contactid = $contactid";
-			 
-		  
-		 
 		 
 	
 if ($conn->query($sql) === TRUE) {
@@ -82,16 +65,10 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Update Failed: " . $sql . "<br>" . $conn->error;
 }
-$conn->close();
 ?> 
 
 <?php include 'update1.php';?>
 
-<?php 
-	}
-$conn->close();
-	
-?> 
    
 </body>
 </html>

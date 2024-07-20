@@ -3,12 +3,6 @@
 <!------- add page here -------->
 
 <?php
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
 
 	$userid = $_GET["userid"];
 
@@ -27,7 +21,7 @@ $sql = "SELECT * FROM btglogin WHERE userid = $userid";
   
 <center>    
 <font color="darkblue" size="4">Add a Local Administrator</font><br><br /><br />
-<form action="admin4b.php" method="get" name="add1">
+<form action="admin4b.php" method="post" name="add1">
 <table width="381" style="width:100px;">
 	<tr>
     	<td width="111" align="right">
@@ -92,9 +86,6 @@ $sql = "SELECT * FROM btglogin WHERE userid = $userid";
     </tr>
     <tr>	
 		<td align="center" colspan="4">
-			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-			<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-			<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
 			<input type="hidden" name="newuserid" value="<?php echo $newuserid;?>">
 			<input type="Submit" value="Update Admin Coordinator" name="b2">
 		</td>

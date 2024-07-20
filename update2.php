@@ -1,14 +1,8 @@
 <?php include('header.php'); ?>
 
 <?php
-// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
 
-	$contactid = $_GET["contactid"];
+$contactid = $__POST["contactid"];
 	
 $sql = "SELECT * FROM btgcontacts WHERE contactid = $contactid";
 	$result = $conn->query($sql);
@@ -33,9 +27,9 @@ $sql = "SELECT * FROM btgcontacts WHERE contactid = $contactid";
     $goodtogo = $row['goodtogo'];
 }
 	
-	?>	        
+?>	        
         
-        <center>    
+<center>    
 <font color="darkblue" size="4">Update Contact Info</font><br><br /><br />
 <form action="update3.php" method="get" name="edit1">
 <table width="381" style="width:100px;">
@@ -55,7 +49,8 @@ $sql = "SELECT * FROM btgcontacts WHERE contactid = $contactid";
             <?php } ?>
             
         </td>
-    </tr><tr>
+    </tr>
+	<tr>
     	<td width="111" align="right">
         	First Name:
         </td>
