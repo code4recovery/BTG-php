@@ -8,11 +8,6 @@
 
 
 <?php
-$servername = "mysql24.ezhostingserver.com";
-$username = "cheri";
-$password = "M@keC0ntact";
-$dbname = "btgwwtest";
-$added = date('Y/m/d');
 
 $first = $_GET['first'];
 $last = $_GET['last'];

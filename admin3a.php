@@ -1,9 +1,6 @@
 
 <?php
-$servername = "mysql24.ezhostingserver.com";
-$username = "cheri";
-$password = "M@keC0ntact";
-$dbname = "btgwwtest";
+
 $added = date('Y/m/d');
 
 $myuser = $_GET['myuser'];

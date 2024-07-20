@@ -8,11 +8,6 @@
 <!--- get username and password from database and compare to passed along --->
 <?php
 
-	$servername = "mysql24.ezhostingserver.com";
-	$username = "cheri";
-	$password = "M@keC0ntact";
-	$dbname = "btgwwtest";
-
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection

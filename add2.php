@@ -1,10 +1,5 @@
 
 <?php
-$servername = "mysql24.ezhostingserver.com";
-$username = "cheri";
-$password = "M@keC0ntact";
-$dbname = "btgwwtest";
-
 $added = date('Y/m/d');
 $first = filter_var($_GET['first'],FILTER_SANITIZE_STRING);
 $last = filter_var($_GET['last'],FILTER_SANITIZE_STRING);

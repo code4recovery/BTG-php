@@ -77,7 +77,3 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
         </center>
         <br /><br /><br />
         
-<?php 
- }
-$conn->close();
-?> 
