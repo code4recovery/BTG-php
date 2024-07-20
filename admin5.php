@@ -15,15 +15,15 @@
 					$userid = $row['userid'];
 			?>
     		<br />
-			<form method="get" action="admin5a.php" name="button1">
+			<form method="POST" action="admin5a.php" name="button1">
 				<input type="Hidden" name="userid" value="<?php echo $userid;?>" />
-		    	<input type="submit" value="Delete Admin Info" name="b13" style="width:250px; height: 24px; background-color: silver;" size=35 />
-			</form>
-           
+		    	<input type="submit" value="Delete " name="b13" style="width: 75px; height: 24px; background-color: silver;" size=35 />
 			<?php
-            	echo "username: " . $row["usernames"] . "   district " . $row["district"] . "<br>";
+            	echo "username: " . $row["usernames"] . "   district " . $row["district"] . "<br><br><hr>";
   				}
 			?>
+			</form>
+           
 		</td>
 	</tr>
 </table>

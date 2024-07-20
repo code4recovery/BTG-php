@@ -2,7 +2,7 @@
 
 <!------- add page here -------->
 <center>   
-<form action="add2.php" method="post" name="add1">
+<form action="add2.php" method="POST" name="add1">
 <table style="width:300px;" border="0">
 	<tr>
     	<td width="111" align="right">

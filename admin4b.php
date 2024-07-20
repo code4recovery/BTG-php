@@ -1,10 +1,10 @@
 <?php
 
-$newuserid = $_GET['newuserid'];
-$newuser = $_GET['newuser'];
-$newpass = $_GET['newpass'];
-$district = $_GET['district'];
-$newlevel = $_GET['newlevel'];
+$newuserid = $_POST['newuserid'];
+$newuser = $_POST['newuser'];
+$newpass = $_POST['newpass'];
+$district = $_POST['district'];
+$newlevel = $_POST['newlevel'];
 
 
 $sql = "UPDATE btglogin

@@ -4,7 +4,7 @@
 
 <?php
 
-	$userid = $_GET["userid"];
+	$userid = $_POST["userid"];
 
 $sql = "SELECT * FROM btglogin WHERE userid = $userid";
 	$result = $conn->query($sql);

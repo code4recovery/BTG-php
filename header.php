@@ -33,17 +33,17 @@ require 'config.php';
 	<?php if ($adminlevel > 1) { ?>
 			    <tr>
 			    	<td valign="top">
-						<form method="get" action="admin3.php"name="button21">
+						<form method="POST" action="admin3.php"name="button21">
 				        	<input type="submit" value="Add an Admin" name="b21" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
-						<form method="get" action="admin4.php"name="button22">
+						<form method="POST" action="admin4.php"name="button22">
 				        	<input type="submit" value="Update an Admin" name="b22" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
-						<form method="get" action="admin5.php"name="button23">
+						<form method="POST" action="admin5.php"name="button23">
 				        	<input type="submit" value="Delete an Admin" name="b23" style="width:125px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
@@ -51,24 +51,24 @@ require 'config.php';
 	<?php }  ?>
 			    <tr>
 			    	<td valign="baseline">
-						<form method="get" action="add1.php" name="button11">
+						<form method="POST" action="add1.php" name="button11">
 		    	        	<input type="submit" value="Add a Contact" name="b11" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
 			    	<td valign="baseline">
-						<form method="get" action="update1.php"name="button12">
+						<form method="POST" action="update1.php"name="button12">
 				        	<input type="submit" value="Update Contact Info" name="b12" style="width:125px; height: 24px; background-color: whitesmoke;" size=35>
 						</form>
 			        </td>
 			    	<td valign="baseline">
-						<form method="get" action="delete1.php" name="button13">
+						<form method="POST" action="delete1.php" name="button13">
 		    	        	<input type="submit" value="Delete a Contact" name="b13" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
 				</tr>
                 <tr>
 			    	<td valign="baseline" colspan="3" align="center">
-						<form method="get" action="loginpost.php" name="button14">
+						<form method="POST" action="loginpost.php" name="button14">
 							<input type="Hidden" name="sorter" value="city, zip" />
 		    	        	<input type="submit" value="View all FROM btgcontacts" name="b13" style="width:250px; height: 24px; background-color: silver;" size=35 />
 			          	</form>

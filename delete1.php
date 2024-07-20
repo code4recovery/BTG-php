@@ -5,7 +5,6 @@
 <td align="left">        
            
 <?php
-	}
 	
 	
 	if ($admindistrict > 0) 

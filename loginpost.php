@@ -1,14 +1,12 @@
 <?php include ('header.php'); ?>
 <!---- insert contact table here ------>
 <?php
-// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
-	$getpass = $_GET["passwords"];
-	$sorter = $_GET["sorter"];
+	
+	if (isset($_GET['sorter'])) {
+			$sorter = $_GET["sorter"];
+	}else{ 
+		$sorter = "district";
+	}	
 ?>	
 <center>
 <br /><br />
@@ -18,7 +16,7 @@ Then choose the search option from the second row<br />
 <br />
 the more options checked the fewer results will be found
 </font> 
-<form action="getcontact.php" method="post">          
+<form action="getcontact.php" method="POST">          
 <table>
     <tr>
         <td rowspan="5" bgcolor="silver" style="width:.25px;">
@@ -77,8 +75,8 @@ the more options checked the fewer results will be found
     				<td>
   						<select name="searchdistrict" style="width:130px;">
                             	<option>Choose a District</option>
-  							<?php while($districtrow = $districts->fetch_assoc()) {?>
-    							<option value="<?php echo $districtrow["district"]?>"><?php echo $districtrow["district"]?></option>
+  								<?php while($districtrow = $districts->fetch_assoc()) {?>
+    								<option value="<?php echo $districtrow["district"]?>"><?php echo $districtrow["district"]?></option>
   							<?php }?>
   						</select>
          			</td>
@@ -161,14 +159,14 @@ the more options checked the fewer results will be found
 <table border="0" width="100%">
  <tr>
             <!--Each table column is echoed in to a td cell-->
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=district&passwords=<?php echo $getpass; ?>"><font size="6">State<br>District</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=first&passwords=<?php echo $getpass; ?>"><font size="6">Name</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=city&passwords=<?php echo $getpass; ?>"><font size="6">Address</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=city&passwords=<?php echo $getpass; ?>"><font size="6">County</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=gender, age&passwords=<?php echo $getpass; ?>"><font size="6">Gender<br>Age</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=district"><font size="6">State<br>District</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=first"><font size="6">Name</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=city"><font size="6">Address</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=county"><font size="6">County</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=gender, age"><font size="6">Gender<br>Age</font></a></td>
             <td valign="bottom" align="left"><font size="6">Phone<br>Email</font></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=interest&passwords=<?php echo $getpass; ?>"><font size="6">Willing<br>&nbsp;&nbsp;&nbsp;to<br> Bridge</font></a></td>
-            <td valign="bottom" align="left"><a href="loginpost.php?sorter=flang DESC&passwords=<?php echo $getpass; ?>"><font size="6">Other<br>Language</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=interest"><font size="6">Willing<br>&nbsp;&nbsp;&nbsp;to<br> Bridge</font></a></td>
+            <td valign="bottom" align="left"><a href="loginpost.php?sorter=flang DESC"><font size="6">Other<br>Language</font></a></td>
             <td valign="bottom" align="left"><font size="6">Date<br>Added</font></td>
             <td valign="bottom" align="left"><font size="6">Date<br>Updated</font></td>
         </tr>    

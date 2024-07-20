@@ -12,7 +12,7 @@
   		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$getpass = $_GET["passwords"];
+	$getpass = $_POST["passwords"];
 		
 	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
 	$result = $conn->query($sql);
