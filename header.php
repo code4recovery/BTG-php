@@ -19,8 +19,9 @@ if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
    exit;
 
 } else {
-
-	
+	$adminlevel = $_SESSION['adminlevel']; 
+	$district = $_SESSION['district']; 
+}
 ?>
 
 </head>
