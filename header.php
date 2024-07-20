@@ -5,9 +5,23 @@
 <title>BTG Contact List</title>
 
 <?php
+require 'config.php';
 
+if(!isset($_SESSION['start']))
+{       
+   $_SESSION['start'] = time();
+}
+if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >500))
+{
+   session_unset();
+   session_destroy();
+   location("index.php");          
+   exit;
+
+} else {
 	$adminlevel = $_SESSION['adminlevel']; 
 	$district = $_SESSION['district']; 
+}
 ?>
 
 </head>
