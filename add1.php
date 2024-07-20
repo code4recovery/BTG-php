@@ -2,7 +2,7 @@
 
 <!------- add page here -------->
 <center>   
-<form action="add2.php" method="get" name="add1">
+<form action="add2.php" method="post" name="add1">
 <table style="width:300px;" border="0">
 	<tr>
     	<td width="111" align="right">
@@ -185,9 +185,6 @@
 			&nbsp;<br>
 		</td>	
 		<td align="center" colspan="3">
-			<input type="hidden" name="passwords" value="<?php echo $passwords;?>">
-			<input type="Hidden" name="usernames" value="<?php echo $usernames;?>">
-			<input type="hidden" name="adminlevel" value="<?php echo $adminlevel;?>">
 			<input type="Submit" value="Add Contact" name="b2">
 		</td>
 	</tr>

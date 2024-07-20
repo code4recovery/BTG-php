@@ -1,53 +1,40 @@
 <?php include('header.php'); ?>
+<br><br>
 <center>		
 <table>
-<tr>
-<td align="left">        
+	<tr>
+		<td align="left">        
            
-<?php	
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-	}
-	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
-	$result = $conn->query($sql);
-  		// output data of each row
-  		while($row = $result->fetch_assoc()) 
-  		{
-			$adminlevel = $row["userlevel"];
-			$usernames = $row["usernames"];
-			$passwords = $row["passwords"];
-			$admindistrict = $row["district"];
-  		}
-		
-	if ($admindistrict > 0) 
-		{
-	$sql = "SELECT * FROM btgcontacts WHERE district = $admindistrict";
-		} else {
-	$sql = "SELECT * FROM btgcontacts";
-		}
-	$result = $conn->query($sql);
-	// output data of each row
-	while($row = $result->fetch_assoc())
-	
-		{
-			$contactid = $row['contactid'];
-?>
+			<?php	
+			
+				if ($admindistrict > 0) 
+					{
+					$sql = "SELECT * FROM btgcontacts WHERE district = $admindistrict";
+					} else {
+					$sql = "SELECT * FROM btgcontacts";
+					}
+				$result = $conn->query($sql);
+				// output data of each row
+				while($row = $result->fetch_assoc())
+					{
+					$contactid = $row['contactid'];
+			?>
     		
-            <a href="update2.php?contactid=<?php echo $contactid;?>&passwords=<?php echo $passwords; ?>">edit</a><br />
+			<form method="post" action="update2.php" name="button11">
+		    	<input type="submit" value="Edit Contact" name="b11" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
+				<input type="hidden" value=<?php echo $contactid;?> name="contactid">
+			</form>
            
-<?php
+			<?php
 
-            echo "name: " . $row["first"] . " " . $row["last"] . "<br><br>";
-  		}
+           	echo "name: " . $row["first"] . " " . $row["last"] . "<br><br>";
+  			}
 
-?>
-</td>
-</tr>
+			?>
+		</td>
+	</tr>
 </table>
- </center>
+</center>
 
 
 </body>

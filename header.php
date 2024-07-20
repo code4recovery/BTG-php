@@ -8,6 +8,7 @@ require 'config.php';
 <title>BTG Contact List</title>
 
 </head>
+
 <body>
 
 	<center>
@@ -58,3 +59,4 @@ require 'config.php';
 			</table>
         </center>
         <br /><br /><br />
+        

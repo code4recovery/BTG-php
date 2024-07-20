@@ -4,12 +4,6 @@
 	<tr>
 		<td align="left">        
 			<?php
-				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
-				// Check connection
-				if ($conn->connect_error) {
-			  		die("Connection failed: " . $conn->connect_error);
-				}
 	
 				$sql = "SELECT * FROM btglogin WHERE userlevel < 3";
 				$result = $conn->query($sql);
@@ -20,15 +14,19 @@
 						$newuser = $row['usernames'];
 						$newpass = $row['passwords'];
 						$district = $row['district'];
+				}
 			?>
  		
-						<a href="admin4a.php?userid=<?php echo $userid;?>&passwords=<?php echo $passwords; ?>">edit</a><br /> 
+				
+		 	<form method="get" action="admin4.php" name="button1">
+				<input type="Hidden" name="userid" value="<?php echo $userid;?>" />
+		    	<input type="submit" value="Edit Admin Info" name="b13" style="width:250px; height: 24px; background-color: silver;" size=35 />
+			</form>	
+
 			<?php            			
-						echo $newuser . " District    " . " " . $district;
+				echo $newuser . " District    " . " " . $district;
 			?> 
 			<hr />
-
-			<?php } ?>
 		</td>
 	</tr>
 </table>
