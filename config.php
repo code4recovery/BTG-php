@@ -12,23 +12,14 @@
   		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$getpass = $_POST["passwords"];
-		
-	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
-	$result = $conn->query($sql);
+$getuser = $_POST["user"];
+$sql = "SELECT * FROM btglogin WHERE usernames = '$getuser'";
+$result = $conn->query($sql);
   		// output data of each row
-  		while($row = $result->fetch_assoc()) 
-  		{
-			$adminlevel = $row["userlevel"];
-            $district = $row["district"];
-			$usernames = $row["usernames"];
-            $passwords = $row["passwords"];
+while($row = $result->fetch_assoc()) 
+ 		{
+			$_SESSION['adminlevel'] = $row["userlevel"];
+     		$_SESSION['district'] = $row["district"];
   		} 
-        
-        //Starting the session	
-	   session_start();
-	   $_SESSION['usernames'] = $usernames;
-       $_SESSION['passwords'] = $passwords;
-       $_SESSION['adminlevel'] = $adminlevel;
-       $_SESSION['district'] = $district;
+         
 ?>

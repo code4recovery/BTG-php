@@ -9,6 +9,12 @@
 <body>
 <center>
 <br /><br /><br />
+<?php
+//Starting the session	
+session_start();
+?>
+
+
 <form action="loginpost.php" method="POST" name="login" target="_self">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>

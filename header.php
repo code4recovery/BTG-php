@@ -18,10 +18,8 @@ require 'config.php';
 // location("index.php");          
 //   exit;
 
-// } else {
-//	$adminlevel = $_SESSION['adminlevel']; 
-//	$district = $_SESSION['district']; 
-// }
+$useradmin = $_SESSION['adminlevel'];
+$userdistrict = $_SESSION['district'];
 ?>
 
 </head>
@@ -31,7 +29,7 @@ require 'config.php';
 
 	<center>
 			<table cellpadding="0" cellspacing="0" border="0" align="center">
-	<?php if ($adminlevel > 1) { ?>
+	<?php if ($useradmin > 1) { ?>
 			    <tr>
 			    	<td valign="top">
 						<form method="POST" action="admin3.php"name="button21">

@@ -1,5 +1,6 @@
 <?php include ('header.php'); ?>
 <!---- insert contact table here ------>
+
 <?php
 	
 	if (isset($_GET['sorter'])) {
