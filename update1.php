@@ -20,17 +20,15 @@
 					$contactid = $row['contactid'];
 			?>
     		
-			<form method="post" action="update2.php" name="button11">
+			<form method="POST" action="update2.php" name="button11">
 		    	<input type="submit" value="Edit Contact" name="b11" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
 				<input type="hidden" value=<?php echo $contactid;?> name="contactid">
+			<?php
+           		echo "name: " . $row["first"] . " " . $row["last"] . "<br><br><hr>";
+				}
+			?>
 			</form>
            
-			<?php
-
-           	echo "name: " . $row["first"] . " " . $row["last"] . "<br><br>";
-  			}
-
-			?>
 		</td>
 	</tr>
 </table>

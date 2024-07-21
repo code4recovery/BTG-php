@@ -1,4 +1,12 @@
 <?php include('header.php'); ?>
+<?php
+	
+	if (isset($_GET['sorter'])) {
+			$sorter = $_GET["sorter"];
+	}else{ 
+		$sorter = "district";
+	}	
+?>	
 
 <?php
 $district1 = $_GET["district1"];
@@ -19,10 +27,9 @@ $both = "Both";
 <!---------------------------------------------------------------------------------------------------------------->
 <center>
 <br /><br />
-<font color="red" size="6">
+<font color="red" size="5">
 Check the Box(s) to Search By in the top row<br>
 Then choose the search option from the second row<br />
-<br />
 the more options checked the fewer results will be found
 </font> 
 <form action="getcontact.php" method="get">          
@@ -169,14 +176,14 @@ the more options checked the fewer results will be found
 <table border="0" width="100%">
  <tr>
             <!--Each table column is echoed in to a td cell-->
-            <td valign="bottom" align="left"><font size="6">State<br>District</font></td>
-            <td valign="bottom" align="left"><font size="6">Name</font></td>
-            <td valign="bottom" align="left"><font size="6">Address</font></td>
-            <td valign="bottom" align="left"><font size="6">County</font></td>
-            <td valign="bottom" align="left"><font size="6">Gender<br>Age</font></td>
+			<td valign="bottom" align="left"><font size="6">State<br>District</font></a></td>
+            <td valign="bottom" align="left"><font size="6">Name</font></a></td>
+            <td valign="bottom" align="left"><font size="6">Address</font></a></td>
+            <td valign="bottom" align="left"><font size="6">County</font></a></td>
+            <td valign="bottom" align="left"><font size="6">Gender<br>Age</font></a></td>
             <td valign="bottom" align="left"><font size="6">Phone<br>Email</font></td>
-            <td valign="bottom" align="left"><font size="6">Willing<br>&nbsp;&nbsp;&nbsp;to<br> Bridge</font></td>
-            <td valign="bottom" align="left"><font size="6">Other<br>Language</font></td>
+            <td valign="bottom" align="left"><font size="6">Willing<br>&nbsp;&nbsp;&nbsp;to<br> Bridge</font></a></td>
+            <td valign="bottom" align="left"><font size="6">Other<br>Language</font></a></td>
             <td valign="bottom" align="left"><font size="6">Date<br>Added</font></td>
             <td valign="bottom" align="left"><font size="6">Date<br>Updated</font></td>
         </tr>    
@@ -204,7 +211,9 @@ if (isset($_GET['interest1'])) {
   }else{ '"'; }
 
 if (isset($_GET['flang1'])) {
-  $sql .= ' AND flang = "' . $_GET['flang1'] . '"' ;
+  $sql .= ' AND flang = "' . $_GET['flang1'] . '"' ;  
+}else{ '"'; 
+
 }
 
 

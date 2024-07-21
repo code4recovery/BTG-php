@@ -1,20 +1,9 @@
-<!--- get username and password from database and compare to passed along --->
 <?php
 
-	$contactid = $__POST["contactid"];
-	
-	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
-	$result = $conn->query($sql);
-  		// output data of each row
-  		while($row = $result->fetch_assoc()) 
-  		{
-			$adminlevel = $row["userlevel"];
-			$usernames = $row["usernames"];
-			$passwords = $row["passwords"];
-  		}
-	
-	if ($result->num_rows > 0) {
+require 'config.php';
 
+$contactid = $_POST["contactid"];
+	
 $updated = date('Y/m/d');
 $contactid = $_POST['contactid'];
 $first = $_POST['first'];
@@ -38,7 +27,7 @@ else
 $flang = 0;;
 
 
- $sql = "UPDATE FROM btgcontacts 
+ $sql = "UPDATE btgcontacts 
  		 SET goodtogo = $goodtogo,
 		 	 first = '$first',
 		 	 last = '$last',

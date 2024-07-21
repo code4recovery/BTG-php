@@ -1,37 +1,37 @@
 <?php include 'header.php';?>
-		
+<center>		
 <table>
-<tr>
-<td align="left">        
+	<tr>
+		<td align="left">        
            
-<?php
+			<?php
 	
+				if ($admindistrict > 0) 
+				{
+					$sql = "SELECT * FROM btgcontacts WHERE district = $admindistrict";
+				} else {
+					$sql = "SELECT * FROM btgcontacts";
+				}
 	
-	if ($admindistrict > 0) 
-		{
-	$sql = "SELECT * FROM btgcontacts WHERE district = $admindistrict";
-		} else {
-	$sql = "SELECT * FROM btgcontacts";
-		}
-	$result = $conn->query($sql);
-	// output data of each row
-	while($row = $result->fetch_assoc())
+				$result = $conn->query($sql);
+				// output data of each row
+				while($row = $result->fetch_assoc())
 	
-		{
-			$contactid = $row['contactid'];
-?>
-    		
-            <a href="delete2.php?contactid=<?php echo $contactid;?>&passwords=<?php echo $passwords; ?>">delete</a><br />
-           
-<?php
-            echo "name: " . $row["first"] . " " . $row["last"] . "<br>";
-  		}
-
-?>
-</td>
-</tr>
+				{
+				$contactid = $row['contactid'];
+			?>
+    		<form method="POST" action="delete2.php" name="button1">
+				<input type="Hidden" name="contactid" value="<?php echo $contactid;?>" />
+		    	<input type="submit" value="Delete " name="b13" style="width: 75px; height: 24px; background-color: silver;" size=35 />
+			<?php
+            	echo "username: " . $row["first"] . "  " . $row["last"] . "<br><br><hr>";
+  				}
+			?>
+			</form>
+		</td>
+	</tr>
 </table>
- </center>
+</center>
 
 
 </body>

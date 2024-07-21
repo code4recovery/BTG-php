@@ -27,6 +27,7 @@ require 'config.php';
 </head>
 
 <body>
+	<br><br><br>
 
 	<center>
 			<table cellpadding="0" cellspacing="0" border="0" align="center">
@@ -75,5 +76,5 @@ require 'config.php';
 					</td>
 			</table>
         </center>
-        <br /><br /><br />
+		<br />
         

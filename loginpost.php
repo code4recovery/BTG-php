@@ -10,13 +10,12 @@
 ?>	
 <center>
 <br /><br />
-<font color="red" size="6">
+<font color="red" size="5">
 Check the Box(s) to Search By in the top row<br>
 Then choose the search option from the second row<br />
-<br />
 the more options checked the fewer results will be found
 </font> 
-<form action="getcontact.php" method="POST">          
+<form action="getcontact.php" method="GET">          
 <table>
     <tr>
         <td rowspan="5" bgcolor="silver" style="width:.25px;">
