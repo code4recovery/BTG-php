@@ -1,45 +1,33 @@
-<!--- get username and password from database and compare to passed along --->
 <?php
 
-	$getpass = $_GET["passwords"];
-	$contactid = $_GET["contactid"];
-	
-	$sql = "SELECT * FROM btglogin WHERE passwords = '$getpass'";
-	$result = $conn->query($sql);
-  		// output data of each row
-  		while($row = $result->fetch_assoc()) 
-  		{
-			$adminlevel = $row["userlevel"];
-			$usernames = $row["usernames"];
-			$passwords = $row["passwords"];
-  		}
-	
-	if ($result->num_rows > 0) {
+require 'config.php';
 
+$contactid = $_POST["contactid"];
+	
 $updated = date('Y/m/d');
-$contactid = $_GET['contactid'];
-$first = $_GET['first'];
-$last = $_GET['last'];
-$interest = $_GET['interest'];
-$address = $_GET['address'];
-$city = $_GET['city'];
-$state = $_GET['state'];
-$zip = $_GET['zip'];
-$district = $_GET['district'];
-$county = $_GET['county'];
-$metro = $_GET['metro'];
-$phone = $_GET['phone'];
-$email = $_GET['email'];
-$age = $_GET['age'];
-$gender = $_GET['gender'];
-$goodtogo = $_GET['goodtogo'];
-if(isset($_GET['flang'])) {
+$contactid = $_POST['contactid'];
+$first = $_POST['first'];
+$last = $_POST['last'];
+$interest = $_POST['interest'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zip = $_POST['zip'];
+$district = $_POST['district'];
+$county = $_POST['county'];
+$metro = $_POST['metro'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$age = $_POST['age'];
+$gender = $_POST['gender'];
+$goodtogo = $_POST['goodtogo'];
+if(isset($_POST['flang'])) {
 $flang = 1; }
 else
 $flang = 0;;
 
 
- $sql = "UPDATE FROM btgcontacts 
+ $sql = "UPDATE btgcontacts 
  		 SET goodtogo = $goodtogo,
 		 	 first = '$first',
 		 	 last = '$last',

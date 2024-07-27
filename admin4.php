@@ -2,7 +2,8 @@
 <center>
 <table>
 	<tr>
-		<td align="left">        
+		<td align="left" nowrap="nowrap">   
+			
 			<?php
 	
 				$sql = "SELECT * FROM btglogin WHERE userlevel < 3";
@@ -11,22 +12,22 @@
 				while($row = $result->fetch_assoc())
 				{
 						$userid = $row['userid'];
-						$newuser = $row['usernames'];
+						$usernames = $row['usernames'];
 						$newpass = $row['passwords'];
 						$district = $row['district'];
-				}
+				
 			?>
  		
 				
-		 	<form method="get" action="admin4.php" name="button1">
+		 	<form method="POST" action="admin4a.php" name="button1">
 				<input type="Hidden" name="userid" value="<?php echo $userid;?>" />
-		    	<input type="submit" value="Edit Admin Info" name="b13" style="width:250px; height: 24px; background-color: silver;" size=35 />
+		    	<input type="submit" value="Edit" name="b13" style="width:35px; height: 24px; background-color: silver;" size=35 />
+			<?php            			
+				echo $row["usernames"] . " District    " . " " . $row["district"] . "<br><br><hr>";
+				}
+			?> 
 			</form>	
 
-			<?php            			
-				echo $newuser . " District    " . " " . $district;
-			?> 
-			<hr />
 		</td>
 	</tr>
 </table>

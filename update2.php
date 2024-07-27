@@ -2,7 +2,7 @@
 
 <?php
 
-$contactid = $__POST["contactid"];
+$contactid = $_POST["contactid"];
 	
 $sql = "SELECT * FROM btgcontacts WHERE contactid = $contactid";
 	$result = $conn->query($sql);
@@ -31,7 +31,7 @@ $sql = "SELECT * FROM btgcontacts WHERE contactid = $contactid";
         
 <center>    
 <font color="darkblue" size="4">Update Contact Info</font><br><br /><br />
-<form action="update3.php" method="get" name="edit1">
+<form action="update3.php" method="POST" name="edit1">
 <table width="381" style="width:100px;">
 	<tr>
     	<td width="111" align="right">

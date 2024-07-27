@@ -1,6 +1,10 @@
 
 <?php
 
+require 'config.php';
+
+$userid = $_POST['userid'];
+
 $sql = "DELETE FROM btglogin WHERE userid='$userid'";
 
 if ($conn->query($sql) === TRUE) {

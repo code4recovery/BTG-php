@@ -1,5 +1,8 @@
 
 <?php
+
+require 'config.php';
+
 $added = date('Y/m/d');
 $first = filter_var($_POST['first'],FILTER_SANITIZE_STRING);
 $last = filter_var($_POST['last'],FILTER_SANITIZE_STRING);

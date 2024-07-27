@@ -14,10 +14,15 @@
 
 	session_start();
 
+	$usernames     = isset( $_SESSION['usernames'] ) ? $_SESSION['usernames'] : '';
+	$getpass       = isset( $_SESSION['passwords'] ) ? $_SESSION['passwords'] : '';
+	$adminlevel    = isset( $_SESSION['adminlevel'] ) ? $_SESSION['adminlevel'] : '';
+	$admindistrict = isset( $_SESSION['district'] ) ? $_SESSION['district'] : '';
+
 	// initial login
-	if (isset($_GET["user"]) && isset($_GET["passwords"])) {
-		$getuser = $_GET["user"];
-		$getpass = $_GET["passwords"];
+	if (isset($_POST["user"]) && isset($_POST["passwords"])) {
+		$getuser = $_POST["user"];
+		$getpass = $_POST["passwords"];
 		
 		// todo sanitize inputs
 		$sql = "SELECT * FROM btglogin WHERE usernames = '$getuser' AND passwords = '$getpass'";
@@ -28,22 +33,15 @@
 			$adminlevel = $row["userlevel"];
             $district = $row["district"];
 			$usernames = $row["usernames"];
-            $passwords = $row["passwords"];
   		} 
         
-	   $_SESSION['usernames'] = $usernames;
-       $_SESSION['passwords'] = $passwords;
-       $_SESSION['adminlevel'] = $adminlevel;
-       $_SESSION['district'] = $district;
+	   $_SESSION['usernames']  = $usernames;
+       $_SESSION['adminlevel'] = intval( $adminlevel );
+       $_SESSION['district']   = $district;
 	}
 	   	
 	// check if user is logged in
-	if (isset($_SESSION['usernames']) && isset($_SESSION['passwords'])) {
-		$usernames = $_SESSION['usernames'];
-		$getpass = $_SESSION['passwords'];
-		$adminlevel = $_SESSION['adminlevel'];
-		$admindistrict = $_SESSION['district'];
-	} else {
+	if ( ! $adminlevel || ! $usernames ) {
 		// redirect to login page
 		header('Location: splash1.php');
 		exit;
