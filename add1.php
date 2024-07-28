@@ -154,18 +154,28 @@
 						<option value="Both">Both</option>
 						<option value="Corrections">Corrections</option>
                         <option value="Treatment">Treatment</option>
-        	</select>
+        	</select>	
         </td>
-    	<td align="right" colspan="1" nowrap>
-        	District:
-        </td>
-        <td align="left">
-        	<INPUT name="district"
-		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
-		 			 size=4 required
-          			 oninvalid="this.setCustomValidity('Please enter the district or region of the contact');" 
-          			 onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the district or region of the contact">
-        </td>
+		
+		<?php if ($_SESSION['adminlevel'] < 2) { ?>
+
+			<td colspan=2>
+				<input type="hidden" value="<?php echo $_SESSION['district']?>" name="district">
+			</td>	
+
+		<?php } else { ?>
+
+    		<td align="right" colspan="1" nowrap>
+        		District:
+        	</td>
+        	<td align="left">
+        		<INPUT name="district"
+		 			 	style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
+		 			 	size=4 required
+          			 	oninvalid="this.setCustomValidity('Please enter the district or region of the contact');" 
+          			 	onchange="try{setCustomValidity('')}catch(e){};" x-moz-errormessage="Please enter the district or region of the contact">
+        	</td>
+		<?php } ?>
     </tr>
 	<tr>
     	<td align="right" nowrap>

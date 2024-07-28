@@ -12,14 +12,37 @@
   		die("Connection failed: " . $conn->connect_error);
 	}
 
-$getuser = $_POST["user"];
-$sql = "SELECT * FROM btglogin WHERE usernames = '$getuser'";
-$result = $conn->query($sql);
-  		// output data of each row
-while($row = $result->fetch_assoc()) 
- 		{
-			$_SESSION['adminlevel'] = $row["userlevel"];
-     		$_SESSION['district'] = $row["district"];
+	session_start();
+
+	$usernames     = isset( $_SESSION['usernames'] ) ? $_SESSION['usernames'] : '';
+	$getpass       = isset( $_SESSION['passwords'] ) ? $_SESSION['passwords'] : '';
+	$adminlevel    = isset( $_SESSION['adminlevel'] ) ? $_SESSION['adminlevel'] : '';
+	$admindistrict = isset( $_SESSION['district'] ) ? $_SESSION['district'] : '';
+
+	// initial login
+	if (isset($_POST["user"]) && isset($_POST["passwords"])) {
+		$getuser = $_POST["user"];
+		$getpass = $_POST["passwords"];
+		
+		// todo sanitize inputs
+		$sql = "SELECT * FROM btglogin WHERE usernames = '$getuser' AND passwords = '$getpass'";
+		$result = $conn->query($sql);
+		// output data of each row
+  		while($row = $result->fetch_assoc()) 
+  		{
+			$adminlevel = $row["userlevel"];
+            $district = $row["district"];
+			$usernames = $row["usernames"];
   		} 
-         
-?>
+        
+	   $_SESSION['usernames']  = $usernames;
+       $_SESSION['adminlevel'] = intval( $adminlevel );
+       $_SESSION['district']   = $district;
+	}
+	   	
+	// check if user is logged in
+	if ( ! $adminlevel || ! $usernames ) {
+		// redirect to login page
+		header('Location: splash1.php');
+		exit;
+	}
