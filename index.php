@@ -19,14 +19,19 @@ session_start();
 
 <form action="loginpost.php" method="POST" name="login" target="_self">
 <table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>
-    	<input name="user" type="text" id="user" />
+<tr>
+    <td align="right">
+    	BTG Contact List Login
     </td>
   </tr>
   <tr>
-    <td>
-    	<input name="passwords" type="password" id="passwords" />
+    <td align="right">
+    	Username: <input name="user" type="text" id="user" width="50" />
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+    	Password: <input name="passwords" type="password" id="passwords" width="50" />
     </td>
   </tr>
   <tr>

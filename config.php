@@ -1,14 +1,14 @@
 <?php
 
-	$servername = "mysql24.ezhostingserver.com";
-	$username = "cheri";
-	$password = "M@keC0ntact";
-	$dbname = "btgwwtest";
+	//$servername = "mysql24.ezhostingserver.com";
+	//$username = "cheri";
+	//$password = "M@keC0ntact";
+	//$dbname = "btgwwtest";
 
-    //$servername = "localhost";
- 	//$username = "urgaczpgdegkl";
-	//$password = "BTG@re@39";
-	//$dbname = "dbkqsuy93hyu21";
+    $servername = "localhost";
+ 	$username = "urgaczpgdegkl";
+	$password = "BTG@re@39";
+	$dbname = "dbkqsuy93hyu21";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
