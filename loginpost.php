@@ -75,7 +75,7 @@ the more options checked the fewer results will be found
                             	<option>Choose a District</option>
   								<?php //while($districtrow = $districts->fetch_assoc()) {?>
 								<?php while($districts && $districtrow = $districts->fetch_assoc()) {?>
-    								<option value="<?php echo $districtrow["district"]?>"><?php echo $districtrow["district"]?></option>
+    								<option value="<?php echo $districts["district"]?>"><?php echo $district["district"]?></option>
   							<?php }?>
   						</select>
          			</td>
@@ -93,7 +93,7 @@ the more options checked the fewer results will be found
   						<select name="searchcity" style="width:130px;">
 						  	<option>Choose a City</option>
   							<?php //while($cityrow = $cities->fetch_assoc()) {?>
-							<?php while($cities && $cityrowrow = $cities->fetch_assoc()) {?>
+							<?php while($cities && $cityrow = $cities->fetch_assoc()) {?>
     							<option value="<?php echo $cityrow["city"]?>"><?php echo $cityrow["city"]?></option>
   							<?php }?>
   						</select>
