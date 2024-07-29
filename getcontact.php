@@ -91,7 +91,8 @@ the more options checked the fewer results will be found
     				<td>
   						<select name="searchdistrict" style="width:130px;">
                             	<option>Choose a District</option>
-  							<?php while($districtrow = $districts->fetch_assoc()) {?>
+  							<?php //while($districtrow = $districts->fetch_assoc()) {?>
+							<?php while($districts && $districtrow = $districts->fetch_assoc()) {?>
     							<option value="<?php echo $districtrow["district"]?>"><?php echo $districtrow["district"]?></option>
   							<?php }?>
   						</select>
@@ -109,7 +110,8 @@ the more options checked the fewer results will be found
     				<td>
   						<select name="searchcity" style="width:130px;">
               <option>Choose a City</option>
-  							<?php while($cityrow = $cities->fetch_assoc()) {?>
+  							<?php //while($cityrow = $cities->fetch_assoc()) {?>
+							<?php while($cities && $cityrowrow = $cities->fetch_assoc()) {?>
     							<option value="<?php echo $cityrow["city"]?>"><?php echo $cityrow["city"]?></option>
   							<?php }?>
   						</select>
@@ -127,7 +129,8 @@ the more options checked the fewer results will be found
     				<td>
   						<select name="searchzip" style="width:130px;">
               <option>Choose a Postal Code</option>
-  							<?php while($ziprow = $zips->fetch_assoc()) {?>
+  							<?php //while($ziprow = $zips->fetch_assoc()) {?>
+							<?php while($zips && $ziprow = $zips->fetch_assoc()) {?>
     							<option value="<?php echo $ziprow["zip"]?>"><?php echo $ziprow["zip"]?></option>
   							<?php }?>
   						</select>
@@ -219,7 +222,8 @@ if (isset($_GET['flang1'])) {
 
 $result = $conn->query($sql);	
 // output data of each row
-  		while($row = $result->fetch_assoc()) 
+	//while($contactrow = $contacts->fetch_assoc())
+	while($contacts && $contactrow = $contacts->fetch_assoc())
 		{	
             
 ?>

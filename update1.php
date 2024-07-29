@@ -15,7 +15,8 @@
 					}
 				$result = $conn->query($sql);
 				// output data of each row
-				while($row = $result->fetch_assoc())
+				//while($row = $result->fetch_assoc())
+				while($result && $row = $result->fetch_assoc())
 					{
 					$contactid = $row['contactid'];
 			?>

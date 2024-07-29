@@ -9,7 +9,8 @@
 				$sql = "SELECT * FROM btglogin WHERE userlevel < 3";
 				$result = $conn->query($sql);
 				// output data of each row
-				while($row = $result->fetch_assoc())
+				//while($row = $result->fetch_assoc())
+				while($result && $row = $result->fetch_assoc())
 				{
 						$userid = $row['userid'];
 						$usernames = $row['usernames'];

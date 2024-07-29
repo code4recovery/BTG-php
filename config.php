@@ -1,9 +1,14 @@
 <?php
 
-    $servername = "mysql24.ezhostingserver.com";
+	$servername = "mysql24.ezhostingserver.com";
 	$username = "cheri";
 	$password = "M@keC0ntact";
 	$dbname = "btgwwtest";
+
+    //$servername = "localhost";
+ 	//$username = "urgaczpgdegkl";
+	//$password = "BTG@re@39";
+	//$dbname = "dbkqsuy93hyu21";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,7 +33,8 @@
 		$sql = "SELECT * FROM btglogin WHERE usernames = '$getuser' AND passwords = '$getpass'";
 		$result = $conn->query($sql);
 		// output data of each row
-  		while($row = $result->fetch_assoc()) 
+  		//while($row = $result->fetch_assoc()) 
+		while($result && $row = $result->fetch_assoc()) 
   		{
 			$adminlevel = $row["userlevel"];
             $district = $row["district"];

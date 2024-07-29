@@ -1,0 +1,91 @@
+[28-Jul-2024 17:15:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[28-Jul-2024 17:16:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[28-Jul-2024 17:20:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[28-Jul-2024 17:37:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[28-Jul-2024 17:57:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[29-Jul-2024 00:51:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[29-Jul-2024 00:51:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[29-Jul-2024 00:59:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[29-Jul-2024 01:08:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 01:08:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 01:13:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 01:23:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 01:26:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 01:26:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 01:27:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/config.php:31
+Stack trace:
+#0 /home/customer/www/btg.wamo-aa.org/public_html/header.php(2): require()
+#1 /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php(1): include('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/config.php on line 31
+[29-Jul-2024 01:28:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 01:33:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 15:06:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 76
+[29-Jul-2024 15:13:44 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/customer/www/btg.wamo-aa.org/public_html/loginpost.php on line 79
