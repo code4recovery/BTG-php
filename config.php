@@ -36,9 +36,9 @@
   		//while($row = $result->fetch_assoc()) 
 		while($result && $row = $result->fetch_assoc()) 
   		{
-			$adminlevel = $row["userlevel"];
-            $district = $row["district"];
-			$usernames = $row["usernames"];
+		$adminlevel = $row["userlevel"];
+            	$district = $row["district"];
+		$usernames = $row["usernames"];
   		} 	
         
 	$_SESSION['usernames']  = $usernames;
