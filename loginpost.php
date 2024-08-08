@@ -170,6 +170,26 @@ the more options checked the fewer results will be found
         </tr>    
 <?php
 	
+	if ($_SESSION['district'] == 0)
+	{
+	$sqlcontacts = "SELECT * FROM btgcontacts ORDER BY $sorter";
+	$contacts = $conn->query($sqlcontacts);
+	// output data of each row
+	//while($contactrow = $contacts->fetch_assoc())
+	while($contacts && $contactrow = $contacts->fetch_assoc())
+	
+	} else {
+
+	$sqlcontacts = "SELECT * FROM btgcontacts WHERE district = $_SESSION['district'] ORDER BY $sorter";
+	$contacts = $conn->query($sqlcontacts);
+	// output data of each row
+	//while($contactrow = $contacts->fetch_assoc())
+	while($contacts && $contactrow = $contacts->fetch_assoc())
+	
+	}
+
+
+
 	$sqlcontacts = "SELECT * FROM btgcontacts ORDER BY $sorter";
 	$contacts = $conn->query($sqlcontacts);
 	// output data of each row

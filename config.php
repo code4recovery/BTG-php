@@ -38,7 +38,12 @@
 
 		if ($result->num_rows == 0)
   { 
-      echo "username or password no good";
+
+?>
+<center>Either the username or password you entered did not match our records<br>
+			 Please try again or contact your Database Administrator</center>
+
+<?php
 				include('index.php');
 				exit();
 				
