@@ -35,7 +35,7 @@
         	District:
         </td>
         <td align="left" colspan="1">
-        	<INPUT name="district"
+        	<INPUT name="mydistrict"
 		 			 style="WIDTH: 60px; HEIGHT: 22px; background-color: white; color: darkblue;"
 		 			 size=56 required 
            			 oninvalid="this.setCustomValidity('Please enter the district or region of the admin - system admins should be zero');" 
@@ -44,7 +44,7 @@
     	<td align="right" nowrap>
         	Admin Level:&nbsp;
         	<select size="1" 
-            		name="userlevel" id="userlevel" required>
+            		name="myuserlevel" id="myuserlevel" required>
 		 			<option value="">Select Level</option>	
 					<option value="1">Local Coordinator</option>
 					<option value="2">System Admin</option>
