@@ -14,7 +14,7 @@ $sql = "SELECT * FROM btglogin WHERE userid = $userid";
  {
     $newuser = $row['usernames'];
     $newpass = $row['passwords'];
-    $district = $row['district'];
+    $newdistrict = $row['district'];
     $access = $row['userlevel'];
     $newuserid = $row['userid'];
 }
@@ -54,12 +54,12 @@ $sql = "SELECT * FROM btglogin WHERE userid = $userid";
         	District:
         </td>
         <td align="left" colspan="1">
-        	<INPUT name="district"
+        	<INPUT name="newdistrict"
 		 			 message="Please enter the district"
 		 			 required="yes"
 		 			 style="WIDTH: 50px; HEIGHT: 22px; background-color: white; color: darkblue;"
 		 			 size=56
-                     value="<?php echo $district;?>">
+                     value="<?php echo $newdistrict;?>">
         </td>
     	<td align="right" nowrap>
         	Admin Level:&nbsp;

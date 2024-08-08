@@ -1,16 +1,18 @@
 <?php
 
+require 'config.php';
+
 $newuserid = $_POST['newuserid'];
 $newuser = $_POST['newuser'];
 $newpass = $_POST['newpass'];
-$district = $_POST['district'];
+$newdistrict = $_POST['newdistrict'];
 $newlevel = $_POST['newlevel'];
 
 
 $sql = "UPDATE btglogin
  		SET usernames = '$newuser',
 		 	passwords = '$newpass',
-		 	district = '$district',
+		 	district = '$newdistrict',
 		 	userlevel = $newlevel
 		WHERE userid = $newuserid";
 	
@@ -24,5 +26,3 @@ if ($conn->query($sql) === TRUE) {
 <?php include 'admin4.php';?>
 
    
-</body>
-</html>
