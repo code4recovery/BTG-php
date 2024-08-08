@@ -25,7 +25,7 @@ $flang = 0;;
 
 
 $sql = "INSERT INTO btgcontacts
-(state, district, first, last, interest, address, city, zip, county, phone, email, added, goodtogo, age, gender, flang) 
+(State, district, first, last, interest, address, city, zip, county, phone, email, added, goodtogo, age, gender, flang) 
 VALUES ('$state', '$district', '$first', '$last', '$interest', '$address', '$city', $zip, '$county', '$phone', '$email', '$added', 1, $age, '$gender', '$flang')";
 
 if ($conn->query($sql) === TRUE) {
