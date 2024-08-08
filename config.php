@@ -39,11 +39,11 @@
 			$adminlevel = $row["userlevel"];
             $district = $row["district"];
 			$usernames = $row["usernames"];
-  		} 
+  		} 	
         
-	   $_SESSION['usernames']  = $usernames;
-       $_SESSION['adminlevel'] = intval( $adminlevel );
-       $_SESSION['district']   = $district;
+	$_SESSION['usernames']  = $usernames;
+       	$_SESSION['adminlevel'] = intval( $adminlevel );
+       	$_SESSION['district']   = $district;
 	}
 	   	
 	// check if user is logged in
