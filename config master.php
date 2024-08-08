@@ -1,9 +1,14 @@
 <?php
 
-    $servername = "localhost";
- 	$username = "urgaczpgdegkl";
-	$password = "BTG@re@39";
-	$dbname = "dbkqsuy93hyu21";
+	$servername = "mysql24.ezhostingserver.com";
+	$username = "cheri";
+	$password = "M@keC0ntact";
+	$dbname = "btgwwtest";
+
+    //$servername = "localhost";
+ 	//$username = "urgaczpgdegkl";
+	//$password = "BTG@re@39";
+	//$dbname = "dbkqsuy93hyu21";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -36,23 +41,25 @@
 			$usernames = $row["usernames"];
   		} 
 
-		if ($result->num_rows == 0)
-  { 
-      echo "username or password no good";
-				include('index.php');
-				exit();
-				
-			}
-		
+	if $getuser = $usernames {
+        
 	   $_SESSION['usernames']  = $usernames;
        $_SESSION['adminlevel'] = intval( $adminlevel );
        $_SESSION['district']   = $district;
 
 	} 
-
+	   	
 	// check if user is logged in
 	if ( ! $adminlevel || ! $usernames ) {
 		// redirect to login page
 		header('Location: index.php');
 		exit;
 	}
+
+}else{
+
+	echo "username or password not correct";
+	header('Location: index.php');
+		exit;
+}
+	?>
