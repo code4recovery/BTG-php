@@ -31,6 +31,7 @@
   		//while($row = $result->fetch_assoc()) 
 		while($result && $row = $result->fetch_assoc()) 
   		{
+<<<<<<< HEAD
 			$adminlevel = $row["userlevel"];
             $district = $row["district"];
 			$usernames = $row["usernames"];
@@ -55,6 +56,18 @@
 
 	} 
 
+=======
+		$adminlevel = $row["userlevel"];
+            	$district = $row["district"];
+		$usernames = $row["usernames"];
+  		} 	
+        
+	$_SESSION['usernames']  = $usernames;
+       	$_SESSION['adminlevel'] = intval( $adminlevel );
+       	$_SESSION['district']   = $district;
+	}
+	   	
+>>>>>>> d34f2fd7d627ad63141933f5d4b93e2a1b83d1cb
 	// check if user is logged in
 	if ( ! $adminlevel || ! $usernames ) {
 		// redirect to login page
