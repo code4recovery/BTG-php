@@ -19,17 +19,17 @@ require 'config.php';
 			    <tr>
 			    	<td valign="top">
 						<form method="POST" action="admin3.php"name="button21">
-				        	<input type="submit" value="Add an Admin" name="b21" style="width:125px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Add an Admin" name="b21" style="width:150px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
 						<form method="POST" action="admin4.php"name="button22">
-				        	<input type="submit" value="Update an Admin" name="b22" style="width:125px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Update an Admin" name="b22" style="width:150px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 			    	<td valign="top">
 						<form method="POST" action="admin5.php"name="button23">
-				        	<input type="submit" value="Delete an Admin" name="b23" style="width:125px; height: 24px; background-color: lightgray;" size=35>
+				        	<input type="submit" value="Delete an Admin" name="b23" style="width:150px; height: 24px; background-color: lightgray;" size=35>
 						</form>
 			        </td>
 				</tr>
@@ -37,17 +37,17 @@ require 'config.php';
 			    <tr>
 			    	<td valign="baseline">
 						<form method="POST" action="add1.php" name="button11">
-		    	        	<input type="submit" value="Add a Contact" name="b11" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
+		    	        	<input type="submit" value="Add a Contact" name="b11" style="width:150px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
 			    	<td valign="baseline">
 						<form method="POST" action="update1.php"name="button12">
-				        	<input type="submit" value="Update Contact Info" name="b12" style="width:125px; height: 24px; background-color: whitesmoke;" size=35>
+				        	<input type="submit" value="Update Contact Info" name="b12" style="width:150px; height: 24px; background-color: whitesmoke;" size=35>
 						</form>
 			        </td>
 			    	<td valign="baseline">
 						<form method="POST" action="delete1.php" name="button13">
-		    	        	<input type="submit" value="Delete a Contact" name="b13" style="width:125px; height: 24px; background-color: whitesmoke;" size=35 />
+		    	        	<input type="submit" value="Delete a Contact" name="b13" style="width:150px; height: 24px; background-color: whitesmoke;" size=35 />
 			          	</form>
 					</td>
 				</tr>

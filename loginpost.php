@@ -71,7 +71,7 @@ the more options checked the fewer results will be found
 			<table>
 				<tr>
     				<td>
-  						<select name="searchdistrict" style="width:130px;">
+  						<select name="searchdistrict" style="width:170px;">
                             	<option>Choose a District</option>
   								<?php while($districtrow = $districts->fetch_assoc()) {?>
     								<option value="<?php echo $districtrow["district"]?>"><?php echo $districtrow["district"]?></option>
@@ -89,7 +89,7 @@ the more options checked the fewer results will be found
 			<table>
 				<tr>
     				<td>
-  						<select name="searchcity" style="width:130px;">
+  						<select name="searchcity" style="width:170px;">
 						  	<option>Choose a City</option>
   							<?php while($cityrow = $cities->fetch_assoc()) {?>
     							<option value="<?php echo $cityrow["city"]?>"><?php echo $cityrow["city"]?></option>
@@ -107,7 +107,7 @@ the more options checked the fewer results will be found
 			<table>
 				<tr>
     				<td>
-  						<select name="searchzip" style="width:130px;">
+  						<select name="searchzip" style="width:170px;">
 						  	<option>Choose a Postal Code</option>
   							<?php while($ziprow = $zips->fetch_assoc()) {?>
     							<option value="<?php echo $ziprow["zip"]?>"><?php echo $ziprow["zip"]?></option>
@@ -118,14 +118,14 @@ the more options checked the fewer results will be found
 			</table>
         </td>
         <td align="right">
-        	<select name="searchgender" style="width:130px;">
+        	<select name="searchgender" style="width:170px;">
 			<option>Select Gender</option>
             	<option value="Female">Female</option>
                 <option value="Male">Male</option>
             </select>
         </td>
         <td align="right">
-        	<select name="searchinterest" style="width:130px;">
+        	<select name="searchinterest" style="width:170px;">
 				<option>Select Facility</option>
             	<option value="Both">Both</option>
                 <option value="Corrections">Corrections</option>
@@ -168,28 +168,8 @@ the more options checked the fewer results will be found
             <td valign="bottom" align="left"><font size="6">Date<br>Added</font></td>
             <td valign="bottom" align="left"><font size="6">Date<br>Updated</font></td>
         </tr>    
-<?php
+		<?php
 	
-	if ($_SESSION['district'] == 0)
-	{
-	$sqlcontacts = "SELECT * FROM btgcontacts ORDER BY $sorter";
-	$contacts = $conn->query($sqlcontacts);
-	// output data of each row
-	//while($contactrow = $contacts->fetch_assoc())
-	while($contacts && $contactrow = $contacts->fetch_assoc())
-	
-	} else {
-
-	$sqlcontacts = "SELECT * FROM btgcontacts WHERE district = $_SESSION['district'] ORDER BY $sorter";
-	$contacts = $conn->query($sqlcontacts);
-	// output data of each row
-	//while($contactrow = $contacts->fetch_assoc())
-	while($contacts && $contactrow = $contacts->fetch_assoc())
-	
-	}
-
-
-
 	$sqlcontacts = "SELECT * FROM btgcontacts ORDER BY $sorter";
 	$contacts = $conn->query($sqlcontacts);
 	// output data of each row
@@ -197,7 +177,7 @@ the more options checked the fewer results will be found
 	while($contacts && $contactrow = $contacts->fetch_assoc())
 	{
 	
-?>		
+?>				
         <!--Use a while loop to make a table row for every DB row-->
         <tr>
             <!--Each table column is echoed in to a td cell-->
