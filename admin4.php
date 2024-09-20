@@ -25,10 +25,9 @@
 		    	<input type="submit" value="Edit" name="b13" style="width:35px; height: 24px; background-color: silver;" size=35 />
 			<?php            			
 				echo $row["usernames"] . " District    " . " " . $row["district"] . "<br><br><hr>";
-				}
 			?> 
 			</form>	
-
+			<?php } ?>
 		</td>
 	</tr>
 </table>
