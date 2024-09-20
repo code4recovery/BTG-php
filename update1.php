@@ -26,9 +26,9 @@
 				<input type="hidden" value=<?php echo $contactid;?> name="contactid">
 			<?php
            		echo "name: " . $row["first"] . " " . $row["last"] . "<br><br><hr>";
-				}
 			?>
 			</form>
+			<?php } ?>						
            
 		</td>
 	</tr>
